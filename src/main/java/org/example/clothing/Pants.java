@@ -2,89 +2,60 @@ package org.example.clothing;
 
 import org.example.colour.Colour;
 
-public class Pants {
-    private int id;
-    private String name;
-    private int price;
-    private String size;
-    private String material;
-    private Colour colour;
-    private String fit;
-    private int length;
+public class Pants extends ItemOfClothing {
+    protected boolean isTightFitting;
+    protected int length;
 
-    private Pants(PantsBuilder pantsBuilder) {
-        this.id = pantsBuilder.Id;
-        this.name = pantsBuilder.name;
-        this.price = pantsBuilder.price;
-        this.size = pantsBuilder.size;
-        this.material = pantsBuilder.material;
-        this.colour = pantsBuilder.colour;
-        this.fit = pantsBuilder.fit;
+    public Pants(ItemOfClothingBuilder<?, ?> itemOfClothingBuilder) {
+        super(itemOfClothingBuilder);
+
+        if (!(itemOfClothingBuilder instanceof PantsBuilder)) {
+            throw new IllegalArgumentException("Pants builder must be an instance of PantsBuilder");
+        }
+
+        PantsBuilder pantsBuilder = (PantsBuilder) itemOfClothingBuilder;
+        this.isTightFitting = pantsBuilder.isTightFitting;
         this.length = pantsBuilder.length;
     }
 
-    public static class PantsBuilder extends ClothesBuilder {
-        private int Id;
-        private String name;
-        private int price;
-        private String size;
-        private String material;
-        private Colour colour;
-        private String fit;
+    @Override
+    public ItemOfClothing build() {
+        return this;
+    }
+
+    @Override
+    public void applyColour() {
+        System.out.println("Pants");
+    }
+
+    public static class PantsBuilder extends ItemOfClothingBuilder<Pants, PantsBuilder> {
+        private boolean isTightFitting;
         private int length;
 
         public PantsBuilder(String size, String material, Colour colour) {
-            super(colour);
-            this.size = size;
-            this.material = material;
+            super(size, material, colour);
         }
 
-        public PantsBuilder setId(int id) {
-            this.Id = id;
+        public PantsBuilder isTightFitting(boolean isTightFitting) {
+            this.isTightFitting = isTightFitting;
             return this;
         }
 
-        public PantsBuilder setName(String name) {
-            this.name = name;
-            return this;
-        }
-
-        public PantsBuilder setPrice(int price) {
-            this.price = price;
-            return this;
-        }
-
-        public PantsBuilder setSize(String size) {
-            this.size = size;
-            return this;
-        }
-
-        public PantsBuilder setMaterial(String material) {
-            this.material = material;
-            return this;
-        }
-
-        public void setColour(Colour colour) {
-            this.colour = colour;
-        }
-
-        public PantsBuilder setFit(String fit) {
-            this.fit = fit;
-            return this;
-        }
-
-        public PantsBuilder setLength(int length) {
+        public PantsBuilder length(int length) {
             this.length = length;
             return this;
         }
 
+        @Override
         public Pants build() {
             return new Pants(this);
         }
+    }
 
-        @Override
-        public void applyColour() {
-            this.colour.applyColour();
-        }
+    @Override
+    public String toString() {
+        return "Pants{" +
+                "colour=" + colour +
+                '}';
     }
 }
