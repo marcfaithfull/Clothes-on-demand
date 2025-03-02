@@ -12,7 +12,7 @@ public class App {
         Colour redColour = new RedColour();
         CottonMaterial cotton = new CottonMaterial();
         Size smallSize = new SmallSize();
-        ItemOfClothing groovy = new Pants.PantsBuilder(smallSize, cotton, redColour)
+        ItemOfClothing groovy = new Skirt.SkirtBuilder(smallSize, cotton, redColour)
                 .setPrice(450)
                 .build();
         groovy.applyColour();
@@ -30,6 +30,12 @@ public class App {
                 .build();
         wack.applyColour();
         System.out.println(wack.getColour());
+
+        ItemOfClothing cool = new Skirt.SkirtBuilder(smallSize, cotton, redColour)
+                .setPrice(450)
+                .build();
+        cool.applyColour();
+        System.out.println(cool.getColour());
 
 //        Colour redColour = new RedColour();
 //        Colour greenColour = new GreenColour();

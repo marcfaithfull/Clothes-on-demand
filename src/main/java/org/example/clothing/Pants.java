@@ -47,7 +47,7 @@ public class Pants extends ItemOfClothing {
                 '}';
     }
 
-    public static class PantsBuilder extends ItemOfClothingBuilder<Pants, PantsBuilder> {
+    public static class PantsBuilder extends ItemOfClothingBuilder<Skirt, PantsBuilder> {
         private boolean isTightFitting;
         private int length;
 
@@ -66,8 +66,8 @@ public class Pants extends ItemOfClothing {
         }
 
         @Override
-        public Pants build() {
-            return new Pants(this);
+        public Skirt build() {
+            return new Skirt(this);
         }
     }
 }
