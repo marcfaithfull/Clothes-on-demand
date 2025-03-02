@@ -22,6 +22,9 @@ public class App {
         System.out.println(groovy.getColour());
         System.out.println(groovy.toString());
 
+        System.out.println(CEO.getCEO().getName());
+        CEO ceo1 = CEO.getCEO();
+        System.out.println(ceo1.getName());
 
 
 //        Colour redColour = new RedColour();
