@@ -26,6 +26,10 @@ public class App {
         CEO ceo1 = CEO.getCEO();
         System.out.println(ceo1.getName());
 
+        ItemOfClothing wack = new TShirt.TShirtBuilder(smallSize, cotton, redColour)
+                .build();
+        wack.applyColour();
+        System.out.println(wack.getColour());
 
 //        Colour redColour = new RedColour();
 //        Colour greenColour = new GreenColour();

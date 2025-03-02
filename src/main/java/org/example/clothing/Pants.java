@@ -40,6 +40,13 @@ public class Pants extends ItemOfClothing {
         System.out.println("Size applied");
     }
 
+    @Override
+    public String toString() {
+        return "Pants{" +
+                "colour=" + colour +
+                '}';
+    }
+
     public static class PantsBuilder extends ItemOfClothingBuilder<Pants, PantsBuilder> {
         private boolean isTightFitting;
         private int length;
@@ -48,12 +55,12 @@ public class Pants extends ItemOfClothing {
             super(size, material, colour);
         }
 
-        public PantsBuilder isTightFitting(boolean isTightFitting) {
+        public PantsBuilder getFitting(boolean isTightFitting) {
             this.isTightFitting = isTightFitting;
             return this;
         }
 
-        public PantsBuilder length(int length) {
+        public PantsBuilder getLength(int length) {
             this.length = length;
             return this;
         }
@@ -62,12 +69,5 @@ public class Pants extends ItemOfClothing {
         public Pants build() {
             return new Pants(this);
         }
-    }
-
-    @Override
-    public String toString() {
-        return "Pants{" +
-                "colour=" + colour +
-                '}';
     }
 }
