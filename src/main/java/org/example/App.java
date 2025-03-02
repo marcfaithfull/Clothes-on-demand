@@ -1,16 +1,23 @@
 package org.example;
 
 import org.example.clothing.*;
-import org.example.colour.BlueColour;
 import org.example.colour.Colour;
-import org.example.colour.GreenColour;
 import org.example.colour.RedColour;
+import org.example.material.CottonMaterial;
+import org.example.size.Size;
+import org.example.size.SmallSize;
 
 public class App {
     public static void main(String[] args) {
         Colour redColour = new RedColour();
-        ItemOfClothing groovy = new Pants.PantsBuilder("M", "T", redColour).build();
+        CottonMaterial cotton = new CottonMaterial();
+        Size smallSize = new SmallSize();
+        ItemOfClothing groovy = new Pants.PantsBuilder(smallSize, cotton, redColour)
+                .setPrice(450)
+                .build();
         groovy.applyColour();
+        groovy.applyColour();
+        groovy.applySize();
         System.out.println(groovy.getSize());
         System.out.println(groovy.getColour());
         System.out.println(groovy.toString());

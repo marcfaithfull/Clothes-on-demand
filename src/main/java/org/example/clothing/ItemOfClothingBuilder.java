@@ -1,16 +1,18 @@
 package org.example.clothing;
 
 import org.example.colour.Colour;
+import org.example.material.Material;
+import org.example.size.Size;
 
 public abstract class ItemOfClothingBuilder<T extends ItemOfClothing, B extends ItemOfClothingBuilder<T, B>> {
     private int id;
     private String name;
     private int price;
-    private String size;
-    private String material;
+    private Size size;
+    private Material material;
     private Colour colour;
 
-    protected ItemOfClothingBuilder(String size, String material, Colour colour) {
+    protected ItemOfClothingBuilder(Size size, Material material, Colour colour) {
         this.size = size;
         this.material = material;
         this.colour = colour;
@@ -39,11 +41,11 @@ public abstract class ItemOfClothingBuilder<T extends ItemOfClothing, B extends 
         return price;
     }
 
-    public String getSize() {
+    public Size getSize() {
         return size;
     }
 
-    public String getMaterial() {
+    public Material getMaterial() {
         return material;
     }
 

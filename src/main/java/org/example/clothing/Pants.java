@@ -1,6 +1,8 @@
 package org.example.clothing;
 
 import org.example.colour.Colour;
+import org.example.material.Material;
+import org.example.size.Size;
 
 public class Pants extends ItemOfClothing {
     protected boolean isTightFitting;
@@ -25,14 +27,24 @@ public class Pants extends ItemOfClothing {
 
     @Override
     public void applyColour() {
-        System.out.println("Pants");
+        System.out.println("Colour applied");
+    }
+
+    @Override
+    public void applyMaterial() {
+        System.out.println("Material applied");
+    }
+
+    @Override
+    public void applySize() {
+        System.out.println("Size applied");
     }
 
     public static class PantsBuilder extends ItemOfClothingBuilder<Pants, PantsBuilder> {
         private boolean isTightFitting;
         private int length;
 
-        public PantsBuilder(String size, String material, Colour colour) {
+        public PantsBuilder(Size size, Material material, Colour colour) {
             super(size, material, colour);
         }
 

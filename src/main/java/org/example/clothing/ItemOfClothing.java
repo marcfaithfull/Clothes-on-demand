@@ -1,13 +1,15 @@
 package org.example.clothing;
 
 import org.example.colour.Colour;
+import org.example.material.Material;
+import org.example.size.Size;
 
 public abstract class ItemOfClothing {
     protected int id;
     protected String name;
     protected int price;
-    protected String size;
-    protected String material;
+    protected Size size;
+    protected Material material;
     protected Colour colour;
 
     protected ItemOfClothing(ItemOfClothingBuilder<?,?> itemOfClothingBuilder) {
@@ -20,11 +22,11 @@ public abstract class ItemOfClothing {
         return price;
     }
 
-    public String getSize() {
+    public Size getSize() {
         return size;
     }
 
-    public String getMaterial() {
+    public Material getMaterial() {
         return material;
     }
 
@@ -35,4 +37,8 @@ public abstract class ItemOfClothing {
     public abstract ItemOfClothing build();
 
     public abstract void applyColour();
+
+    public abstract void applyMaterial();
+
+    public abstract void applySize();
 }
