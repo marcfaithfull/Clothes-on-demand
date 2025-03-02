@@ -1,6 +1,5 @@
 package org.example;
 
-import org.example.clothing.Clothes;
 import org.example.clothing.Pants;
 import org.example.clothing.Skirt;
 import org.example.clothing.TShirt;

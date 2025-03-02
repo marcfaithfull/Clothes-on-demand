@@ -2,18 +2,19 @@ package org.example.clothing;
 
 import org.example.colour.Colour;
 
-public class Skirt extends Clothes {
+public class Skirt {
     int id;
     String name;
+    int price;
     String size;
     Colour colour;
     boolean isHighWaistline;
     boolean isDotted;
 
     private Skirt(SkirtBuilder skirtBuilder) {
-        super(skirtBuilder.colour);
         this.id = skirtBuilder.id;
         this.name = skirtBuilder.name;
+        this.price = skirtBuilder.price;
         this.size = skirtBuilder.size;
         this.colour = skirtBuilder.colour;
         this.isHighWaistline = skirtBuilder.isHighWaistline;
@@ -83,6 +84,7 @@ public class Skirt extends Clothes {
     public static class SkirtBuilder extends ClothesBuilder {
         int id;
         String name;
+        int price;
         String size;
         Colour colour;
         boolean isHighWaistline;
