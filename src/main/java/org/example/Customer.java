@@ -6,7 +6,7 @@ public class Customer {
     private int id;
     private String name;
     private String address;
-    private String email;
+    private String mail;
 
     private static AtomicInteger nextId = new AtomicInteger();
 
@@ -14,7 +14,7 @@ public class Customer {
         this.id = nextId.getAndIncrement();
         this.name = name;
         this.address = address;
-        this.email = email;
+        this.mail = mail;
     }
 
     public int getId() {
@@ -41,11 +41,11 @@ public class Customer {
         this.address = address;
     }
 
-    public String getEmail() {
-        return email;
+    public String getMail() {
+        return mail;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setMail(String mail) {
+        this.mail = mail;
     }
 }
