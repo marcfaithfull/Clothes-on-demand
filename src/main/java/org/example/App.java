@@ -17,6 +17,7 @@ import org.example.size.Size;
 import org.example.size.SmallSize;
 import org.example.size.MediumSize;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class App {
@@ -43,9 +44,9 @@ public class App {
             switch (userInput) {
                 case 1:
                     // Pants
-                    SizePage.loadSizePage();
+                    //SizePage.loadSizePage();
                     size = chooseSize(scanner);
-                    MaterialPage.loadMaterialPage();
+                    //MaterialPage.loadMaterialPage();
                     material = chooseMaterial(scanner);
                     ColourPage.loadColourPage();
                     colour = chooseColour(scanner);
@@ -58,6 +59,11 @@ public class App {
 
 
                     System.out.println(pants);
+                    // What fit?
+                    // What length?
+                    // Place order?
+                    // Inform CEO
+                    // Send receipt
 
                     break;
 
@@ -102,22 +108,39 @@ public class App {
     }
 
     private static Size chooseSize(Scanner scanner) {
-        int sizeChoice = scanner.nextInt();
-        switch (sizeChoice) {
-            case 1:
-                return new SmallSize();
-            case 2:
-                return new MediumSize();
-            case 3:
-                return new LargeSize();
-            default:
+        while (true) {
+            try {
+
+                SizePage.loadSizePage();
+
+                int sizeChoice = scanner.nextInt();
+                //scanner.nextLine();
+
+                switch (sizeChoice) {
+                    case 1:
+                        return new SmallSize();
+                    case 2:
+                        return new MediumSize();
+                    case 3:
+                        return new LargeSize();
+                    default:
+                        System.out.println("----------------------------------------------------------------------------------------");
+                        System.out.println("Invalid input");
+                }
+        } catch (InputMismatchException getItRightSon) {
+                System.out.println("----------------------------------------------------------------------------------------");
                 System.out.println("Invalid input");
-                return null;
+            scanner.nextLine();}
         }
     }
 
     private static Material chooseMaterial(Scanner scanner) {
-        int materialChoice = scanner.nextInt();
+        while (true) {
+            try {
+                MaterialPage.loadMaterialPage();
+
+                int materialChoice = scanner.nextInt();
+                //scanner.nextLine();
         switch (materialChoice) {
             case 1:
                 return new CottonMaterial();
@@ -126,10 +149,16 @@ public class App {
             case 3:
                 return new LinenMaterial();
             default:
+                System.out.println("----------------------------------------------------------------------------------------");
                 System.out.println("Invalid input");
-                return null;
+
         }
-    }
+    } catch (InputMismatchException getItRightSon) {
+                System.out.println("----------------------------------------------------------------------------------------");
+                System.out.println("Invalid input");
+                scanner.nextLine();}
+            }
+        }
 
     private static Colour chooseColour(Scanner scanner) {
         int colourChoice = scanner.nextInt();
