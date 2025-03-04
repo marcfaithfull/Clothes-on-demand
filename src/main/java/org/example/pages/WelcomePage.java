@@ -1,4 +1,4 @@
-package org.example.page;
+package org.example.pages;
 
 public class WelcomePage {
     public static void loadWelcomePage() {

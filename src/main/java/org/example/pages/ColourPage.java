@@ -1,11 +1,9 @@
-package org.example.page.tshirtpages;
+package org.example.pages;
 
-public class TShirtPage {
+public class ColourPage {
 
-    public static void loadTShirtPage() {
+    public static void loadColourPage() {
         System.out.println("----------------------------------------------------------------------------------------");
-        System.out.println("Let's design a T-Shirt!");
-        System.out.println("What colour are you interested in?");
         System.out.println("1) Red");
         System.out.println("2) Green");
         System.out.println("3) Blue");
