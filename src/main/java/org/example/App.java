@@ -10,19 +10,6 @@ import org.example.size.SmallSize;
 public class App {
     public static void main(String[] args) {
 
-        Colour redColour = new RedColour();
-        CottonMaterial cotton = new CottonMaterial();
-        Size smallSize = new SmallSize();
-        ItemOfClothing groovy = new Skirt.SkirtBuilder(smallSize, cotton, redColour)
-                .setPrice(450)
-                .build();
-        groovy.applyColour();
-        groovy.applyColour();
-        groovy.applySize();
-        System.out.println(groovy.getSize());
-        System.out.println(groovy.getColour());
-        System.out.println(groovy.toString());
-
 //        WelcomePage.loadWelcomePage();
 //
 //        Scanner scanner = new Scanner(System.in);

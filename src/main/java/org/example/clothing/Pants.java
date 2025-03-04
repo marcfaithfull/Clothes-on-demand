@@ -4,70 +4,24 @@ import org.example.colour.Colour;
 import org.example.material.Material;
 import org.example.size.Size;
 
-public class Pants extends ItemOfClothing {
-    protected boolean isTightFitting;
-    protected int length;
+public class Pants {
+    private int id;
+    private String name;
+    private int price;
+    private Size size;
+    private Material material;
+    private Colour colour;
+    private boolean isTightFitting;
+    private int length;
 
-    public Pants(ItemOfClothingBuilder<?, ?> itemOfClothingBuilder) {
-        super(itemOfClothingBuilder);
-
-        if (!(itemOfClothingBuilder instanceof PantsBuilder)) {
-            throw new IllegalArgumentException("Pants builder must be an instance of PantsBuilder");
-        }
-
-        PantsBuilder pantsBuilder = (PantsBuilder) itemOfClothingBuilder;
-        this.isTightFitting = pantsBuilder.isTightFitting;
-        this.length = pantsBuilder.length;
-    }
-
-    @Override
-    public ItemOfClothing build() {
-        return this;
-    }
-
-    @Override
-    public void applyColour() {
-        System.out.println("Colour applied");
-    }
-
-    @Override
-    public void applyMaterial() {
-        System.out.println("Material applied");
-    }
-
-    @Override
-    public void applySize() {
-        System.out.println("Size applied");
-    }
-
-    @Override
-    public String toString() {
-        return "Pants{" +
-                "colour=" + colour +
-                '}';
-    }
-
-    public static class PantsBuilder extends ItemOfClothingBuilder<Skirt, PantsBuilder> {
+    public static class PantsBuilder {
+        private int id;
+        private String name;
+        private int price;
+        private Size size;
+        private Material material;
+        private Colour colour;
         private boolean isTightFitting;
         private int length;
-
-        public PantsBuilder(Size size, Material material, Colour colour) {
-            super(size, material, colour);
-        }
-
-        public PantsBuilder getFitting(boolean isTightFitting) {
-            this.isTightFitting = isTightFitting;
-            return this;
-        }
-
-        public PantsBuilder getLength(int length) {
-            this.length = length;
-            return this;
-        }
-
-        @Override
-        public Skirt build() {
-            return new Skirt(this);
-        }
     }
 }
