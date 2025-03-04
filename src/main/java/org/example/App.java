@@ -1,6 +1,8 @@
 package org.example;
 
 import org.example.clothing.Pants;
+import org.example.clothing.Skirt;
+import org.example.clothing.TShirt;
 import org.example.colour.BlueColour;
 import org.example.colour.Colour;
 import org.example.colour.GreenColour;
@@ -19,25 +21,24 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        WelcomePage.loadWelcomePage();
 
+        WelcomePage.loadWelcomePage();
         Scanner scanner = new Scanner(System.in);
         String name = scanner.nextLine();
         Customer customer = new Customer(name);
 
         while (true) {
             ProductPage.loadProductPage(customer);
-
             if (!scanner.hasNextInt()) {
                 ProductPage.loadErrorMessage();
                 scanner.next();
                 continue;
             }
-
             int userInput = scanner.nextInt();
-            Size size = null;
-            Material material = null;
-            Colour colour = null;
+
+            Size size;
+            Material material;
+            Colour colour;
 
             switch (userInput) {
                 case 1:
@@ -55,15 +56,44 @@ public class App {
                             .colour(colour)
                             .build();
 
+
                     System.out.println(pants);
+
+                    break;
 
                 case 2:
                     // TShirt
-                    break;
+                    SizePage.loadSizePage();
+                    size = chooseSize(scanner);
+                    MaterialPage.loadMaterialPage();
+                    material = chooseMaterial(scanner);
+                    ColourPage.loadColourPage();
+                    colour = chooseColour(scanner);
+
+                    TShirt tShirt = new TShirt.TShirtBuilder()
+                            .size(size)
+                            .material(material)
+                            .colour(colour)
+                            .build();
+
+                    System.out.println(tShirt);
 
                 case 3:
                     // Skirt
-                    break;
+                    SizePage.loadSizePage();
+                    size = chooseSize(scanner);
+                    MaterialPage.loadMaterialPage();
+                    material = chooseMaterial(scanner);
+                    ColourPage.loadColourPage();
+                    colour = chooseColour(scanner);
+
+                    Skirt skirt = new Skirt.SkirtBuilder()
+                            .size(size)
+                            .material(material)
+                            .colour(colour)
+                            .build();
+
+                    System.out.println(skirt);
 
                 default:
                     ProductPage.loadErrorMessage();
@@ -107,9 +137,9 @@ public class App {
             case 1:
                 return new RedColour();
             case 2:
-                return new BlueColour();
-            case 3:
                 return new GreenColour();
+            case 3:
+                return new BlueColour();
             default:
                 System.out.println("Invalid input");
                 return null;

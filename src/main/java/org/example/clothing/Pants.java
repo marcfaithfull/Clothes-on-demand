@@ -73,7 +73,11 @@ public class Pants {
         this.colour = colour;
     }
 
-    public void setIsTightTitting(boolean tightFitting) {
+    public boolean isTightFitting() {
+        return isTightFitting;
+    }
+
+    public void setTightTitting(boolean tightFitting) {
         isTightFitting = tightFitting;
     }
 
