@@ -22,6 +22,12 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
+        Size size;
+        Material material;
+        Colour colour;
+        Pants pants = null;
+        TShirt tShirt = null;
+        Skirt skirt = null;
 
         WelcomePage.loadWelcomePage();
         Scanner scanner = new Scanner(System.in);
@@ -37,64 +43,123 @@ public class App {
             }
             int userInput = scanner.nextInt();
 
-            Size size;
-            Material material;
-            Colour colour;
 
             switch (userInput) {
                 case 1:
-                    Pants pants = new Pants.PantsBuilder()
+                    pants = new Pants.PantsBuilder()
                             .size(chooseSize(scanner))
                             .material(chooseMaterial(scanner))
                             .colour(chooseColour(scanner))
                             .build();
 
+                    System.out.println("----------------------------------------------------------------------------------------");
+
+                    System.out.println("Build method complete");
+
+                    chooseFit(scanner, pants);
+                    chooseLength(scanner, pants);
 
                     System.out.println(pants);
+
+                    // Inform CEO that an order is in place
                     // What fit?
                     // What length?
                     // Place order?
-                    // Inform CEO
                     // Send receipt
 
                     break;
 
                 case 2:
-                    // TShirt
-                    SizePage.loadSizePage();
-                    size = chooseSize(scanner);
-                    MaterialPage.loadMaterialPage();
-                    material = chooseMaterial(scanner);
-                    ColourPage.loadColourPage();
-                    colour = chooseColour(scanner);
-
-                    TShirt tShirt = new TShirt.TShirtBuilder()
-                            .size(size)
-                            .material(material)
-                            .colour(colour)
+                    tShirt = new TShirt.TShirtBuilder()
+                            .size(chooseSize(scanner))
+                            .material(chooseMaterial(scanner))
+                            .colour(chooseColour(scanner))
                             .build();
 
+                    System.out.println("----------------------------------------------------------------------------------------");
                     System.out.println(tShirt);
 
                 case 3:
-                    // Skirt
-                    SizePage.loadSizePage();
-                    size = chooseSize(scanner);
-                    MaterialPage.loadMaterialPage();
-                    material = chooseMaterial(scanner);
-                    ColourPage.loadColourPage();
-                    colour = chooseColour(scanner);
-
-                    Skirt skirt = new Skirt.SkirtBuilder()
-                            .size(size)
-                            .material(material)
-                            .colour(colour)
+                    skirt = new Skirt.SkirtBuilder()
+                            .size(chooseSize(scanner))
+                            .material(chooseMaterial(scanner))
+                            .colour(chooseColour(scanner))
                             .build();
 
+                    System.out.println("----------------------------------------------------------------------------------------");
                     System.out.println(skirt);
 
                 default:
                     ProductPage.loadErrorMessage();
+            }
+            System.out.println(pants);
+            System.out.println(tShirt);
+            System.out.println(skirt);
+
+            System.out.println("----------------------------------------------------------------------------------------");
+            System.out.println("Happy happy");
+            scanner.nextLine();
+        }
+    }
+
+    private static void chooseFit(Scanner scanner, Pants pants) {
+        while (true) {
+            try {
+                System.out.println("----------------------------------------------------------------------------------------");
+                System.out.println("Choose your fit");
+                System.out.println("1) Skinny");
+                System.out.println("2) Wide");
+                System.out.print("Option: ");
+
+                int fitChoice = scanner.nextInt();
+                //scanner.nextLine();
+
+                switch (fitChoice) {
+                    case 1:
+                        pants.setTightTitting(true);
+                        return;
+                    case 2:
+                        pants.setTightTitting(false);
+                        return;
+                    default:
+                        System.out.println("----------------------------------------------------------------------------------------");
+                        System.out.println("Invalid input");
+                }
+            } catch (InputMismatchException getItRightSon) {
+                System.out.println("----------------------------------------------------------------------------------------");
+                System.out.println("Invalid input");
+                scanner.nextLine();
+            }
+        }
+    }
+
+    public static void chooseLength(Scanner scanner, Pants pants) {
+        while (true) {
+            try {
+                System.out.println("----------------------------------------------------------------------------------------");
+                System.out.println("Choose your length");
+                System.out.println("1) Ankle Swingers");
+                System.out.println("2) Normal");
+                System.out.print("Option: ");
+
+                int lengthChoice = scanner.nextInt();
+                //scanner.nextLine();
+
+                switch (lengthChoice) {
+                    case 1:
+                        pants.setAreAnkleSwingers(true);
+                        return;
+                        case 2:
+                            pants.setAreAnkleSwingers(false);
+                            return;
+                            default:
+                                System.out.println("----------------------------------------------------------------------------------------");
+                                System.out.println("Invalid input");
+                }
+            } catch (InputMismatchException getItRightSon) {
+                System.out.println("----------------------------------------------------------------------------------------");
+                System.out.println("Invalid input");
+                scanner.nextLine();
             }
         }
     }

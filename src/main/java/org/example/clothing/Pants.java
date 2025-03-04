@@ -11,8 +11,8 @@ public class Pants {
     private Size size;
     private Material material;
     private Colour colour;
-    private boolean isTightFitting;
-    private int length;
+    private boolean areTightFitting;
+    private boolean areAnkleSwingers;
 
     public Pants(PantsBuilder pantsBuilder) {
         this.id = pantsBuilder.id;
@@ -21,8 +21,8 @@ public class Pants {
         this.size = pantsBuilder.size;
         this.material = pantsBuilder.material;
         this.colour = pantsBuilder.colour;
-        this.isTightFitting = pantsBuilder.isTightFitting;
-        this.length = pantsBuilder.length;
+        this.areTightFitting = pantsBuilder.areTightFitting;
+        this.areAnkleSwingers = pantsBuilder.areAnkleSwingers;
     }
 
     public int getId() {
@@ -73,20 +73,20 @@ public class Pants {
         this.colour = colour;
     }
 
-    public boolean isTightFitting() {
-        return isTightFitting;
+    public boolean getAreTightFitting() {
+        return areTightFitting;
     }
 
-    public void setTightTitting(boolean tightFitting) {
-        isTightFitting = tightFitting;
+    public void setTightTitting(boolean areTightFitting) {
+        this.areTightFitting = areTightFitting;
     }
 
-    public int getLength() {
-        return length;
+    public boolean getAreAnkleSwingers() {
+        return areAnkleSwingers;
     }
 
-    public void setLength(int length) {
-        this.length = length;
+    public void setAreAnkleSwingers(boolean areAnkleSwingers) {
+        this.areAnkleSwingers = areAnkleSwingers;
     }
 
     @Override
@@ -98,8 +98,8 @@ public class Pants {
                 ", size=" + size +
                 ", material=" + material +
                 ", colour=" + colour +
-                ", isTightFitting=" + isTightFitting +
-                ", length=" + length +
+                ", isTightFitting=" + areTightFitting +
+                ", areAnkleSwingers=" + areAnkleSwingers +
                 '}';
     }
 
@@ -110,8 +110,8 @@ public class Pants {
         private Size size;
         private Material material;
         private Colour colour;
-        private boolean isTightFitting;
-        private int length;
+        private boolean areTightFitting;
+        private boolean areAnkleSwingers;
 
         public PantsBuilder size(Size size) {
             this.size = size;
