@@ -43,18 +43,10 @@ public class App {
 
             switch (userInput) {
                 case 1:
-                    // Pants
-                    //SizePage.loadSizePage();
-                    size = chooseSize(scanner);
-                    //MaterialPage.loadMaterialPage();
-                    material = chooseMaterial(scanner);
-                    ColourPage.loadColourPage();
-                    colour = chooseColour(scanner);
-
                     Pants pants = new Pants.PantsBuilder()
-                            .size(size)
-                            .material(material)
-                            .colour(colour)
+                            .size(chooseSize(scanner))
+                            .material(chooseMaterial(scanner))
+                            .colour(chooseColour(scanner))
                             .build();
 
 
@@ -127,10 +119,11 @@ public class App {
                         System.out.println("----------------------------------------------------------------------------------------");
                         System.out.println("Invalid input");
                 }
-        } catch (InputMismatchException getItRightSon) {
+            } catch (InputMismatchException getItRightSon) {
                 System.out.println("----------------------------------------------------------------------------------------");
                 System.out.println("Invalid input");
-            scanner.nextLine();}
+                scanner.nextLine();
+            }
         }
     }
 
@@ -141,37 +134,50 @@ public class App {
 
                 int materialChoice = scanner.nextInt();
                 //scanner.nextLine();
-        switch (materialChoice) {
-            case 1:
-                return new CottonMaterial();
-            case 2:
-                return new PolyesterMaterial();
-            case 3:
-                return new LinenMaterial();
-            default:
-                System.out.println("----------------------------------------------------------------------------------------");
-                System.out.println("Invalid input");
+                switch (materialChoice) {
+                    case 1:
+                        return new CottonMaterial();
+                    case 2:
+                        return new PolyesterMaterial();
+                    case 3:
+                        return new LinenMaterial();
+                    default:
+                        System.out.println("----------------------------------------------------------------------------------------");
+                        System.out.println("Invalid input");
 
-        }
-    } catch (InputMismatchException getItRightSon) {
+                }
+            } catch (InputMismatchException getItRightSon) {
                 System.out.println("----------------------------------------------------------------------------------------");
                 System.out.println("Invalid input");
-                scanner.nextLine();}
+                scanner.nextLine();
             }
         }
+    }
 
     private static Colour chooseColour(Scanner scanner) {
-        int colourChoice = scanner.nextInt();
-        switch (colourChoice) {
-            case 1:
-                return new RedColour();
-            case 2:
-                return new GreenColour();
-            case 3:
-                return new BlueColour();
-            default:
+        while (true) {
+            try {
+                ColourPage.loadColourPage();
+
+
+                int colourChoice = scanner.nextInt();
+                //scanner.nextLine();
+                switch (colourChoice) {
+                    case 1:
+                        return new RedColour();
+                    case 2:
+                        return new GreenColour();
+                    case 3:
+                        return new BlueColour();
+                    default:
+                        System.out.println("----------------------------------------------------------------------------------------");
+                        System.out.println("Invalid input");
+                }
+            } catch (InputMismatchException getItRightSon) {
+                System.out.println("----------------------------------------------------------------------------------------");
                 System.out.println("Invalid input");
-                return null;
+                scanner.nextLine();
+            }
         }
     }
 }
