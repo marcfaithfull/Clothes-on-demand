@@ -4,6 +4,7 @@ public class ColourPage {
 
     public static void loadColourPage() {
         System.out.println("----------------------------------------------------------------------------------------");
+        System.out.println("What colour would you like?");
         System.out.println("1) Red");
         System.out.println("2) Green");
         System.out.println("3) Blue");

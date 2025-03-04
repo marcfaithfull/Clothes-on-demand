@@ -1,6 +1,6 @@
 package org.example.size;
 
-public class mediumSize implements Size {
+public class MediumSize implements Size {
     @Override
     public void applySize() {
         System.out.println("Medium Size");
