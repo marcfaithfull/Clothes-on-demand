@@ -1,15 +1,27 @@
 package org.example;
 
 import org.example.clothing.*;
-import org.example.colour.Colour;
-import org.example.colour.RedColour;
+import org.example.colour.GreenColour;
 import org.example.material.CottonMaterial;
-import org.example.size.Size;
+import org.example.material.PolyesterMaterial;
 import org.example.size.SmallSize;
 
 public class App {
     public static void main(String[] args) {
 
+        Pants pants = new Pants.PantsBuilder()
+                .size(new SmallSize())
+                .material(new CottonMaterial())
+                .colour(new GreenColour())
+                .build();
+
+        System.out.println(pants);
+
+        pants.setIsTightTitting(true);
+        pants.setLength(32);
+        pants.setMaterial(new PolyesterMaterial());
+
+        System.out.println(pants);
 //        WelcomePage.loadWelcomePage();
 //
 //        Scanner scanner = new Scanner(System.in);

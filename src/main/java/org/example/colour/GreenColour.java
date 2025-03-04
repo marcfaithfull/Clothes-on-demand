@@ -6,4 +6,9 @@ public class GreenColour implements Colour {
     public void applyColour() {
         System.out.println("Green");
     }
+
+    @Override
+    public String toString() {
+        return "GreenColour{}";
+    }
 }
