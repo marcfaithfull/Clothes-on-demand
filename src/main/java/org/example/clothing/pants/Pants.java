@@ -1,4 +1,4 @@
-package org.example.clothing;
+package org.example.clothing.pants;
 
 import org.example.colour.Colour;
 import org.example.material.Material;
@@ -13,6 +13,8 @@ public class Pants {
     private Colour colour;
     private boolean areTightFitting;
     private boolean areAnkleSwingers;
+
+    PantsDecorator pantsDecorator;
 
     public Pants(PantsBuilder pantsBuilder) {
         this.id = pantsBuilder.id;
@@ -87,6 +89,10 @@ public class Pants {
 
     public void setAreAnkleSwingers(boolean areAnkleSwingers) {
         this.areAnkleSwingers = areAnkleSwingers;
+    }
+
+    public void setPantsDecorator(PantsDecorator pantsDecorator) {
+        pantsDecorator.decoratePants();
     }
 
     @Override
