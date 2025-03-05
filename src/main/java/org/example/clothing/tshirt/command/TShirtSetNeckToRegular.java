@@ -1,9 +1,9 @@
-package org.example.clothing.tshirt.commands;
+package org.example.clothing.tshirt.command;
 
-import org.example.clothing.ClothesModification;
+import org.example.clothing.ClothesCommand;
 import org.example.clothing.tshirt.TShirt;
 
-public class TShirtSetNeckToRegular implements ClothesModification {
+public class TShirtSetNeckToRegular implements ClothesCommand {
 private final TShirt tshirt;
 
     public TShirtSetNeckToRegular(TShirt tshirt) {

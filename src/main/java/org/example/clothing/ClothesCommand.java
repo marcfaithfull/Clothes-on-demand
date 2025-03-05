@@ -1,6 +1,6 @@
 package org.example.clothing;
 
-public interface ClothesModification {
+public interface ClothesCommand {
 
     void execute();
 }

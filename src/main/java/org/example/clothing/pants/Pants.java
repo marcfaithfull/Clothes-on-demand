@@ -1,6 +1,5 @@
 package org.example.clothing.pants;
 
-import org.example.clothing.ClothesModification;
 import org.example.clothing.ItemOfClothing;
 import org.example.colour.Colour;
 import org.example.material.Material;
@@ -15,8 +14,6 @@ public class Pants extends ItemOfClothing {
     private Colour colour;
     private boolean areWide;
     private boolean areShorts;
-
-    //ClothesModification clothesModification;
 
     public Pants() {}
 

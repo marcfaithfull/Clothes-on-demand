@@ -1,9 +1,9 @@
-package org.example.clothing.pants.commands;
+package org.example.clothing.pants.command;
 
-import org.example.clothing.ClothesModification;
+import org.example.clothing.ClothesCommand;
 import org.example.clothing.pants.Pants;
 
-public class PantsSetFitToWide implements ClothesModification {
+public class PantsSetFitToWide implements ClothesCommand {
     private final Pants pants;
 
     public PantsSetFitToWide(Pants pants) {

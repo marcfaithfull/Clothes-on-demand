@@ -1,9 +1,9 @@
-package org.example.clothing.skirt.commands;
+package org.example.clothing.skirt.command;
 
-import org.example.clothing.ClothesModification;
+import org.example.clothing.ClothesCommand;
 import org.example.clothing.skirt.Skirt;
 
-public class SkirtSetWaistlineToRegular implements ClothesModification {
+public class SkirtSetWaistlineToRegular implements ClothesCommand {
     private final Skirt skirt;
 
     public SkirtSetWaistlineToRegular(Skirt skirt) {

@@ -3,15 +3,31 @@ package org.example.menu;
 import org.example.clothing.ClothesModifier;
 import org.example.clothing.ItemOfClothing;
 import org.example.clothing.pants.*;
-import org.example.clothing.pants.commands.PantsSetFitToRegular;
-import org.example.clothing.pants.commands.PantsSetFitToWide;
-import org.example.clothing.pants.commands.PantsSetLengthToRegular;
-import org.example.clothing.pants.commands.PantsSetLengthToShorts;
-
+import org.example.clothing.pants.command.PantsSetFitToRegular;
+import org.example.clothing.pants.command.PantsSetFitToWide;
+import org.example.clothing.pants.command.PantsSetLengthToRegular;
+import org.example.clothing.pants.command.PantsSetLengthToShorts;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 public class PantsMenu {
+
+    public static void buildPants(Scanner scanner, ClothesModifier clothesModifier, List<ItemOfClothing> basket) {
+        Pants pants = new Pants.PantsBuilder()
+                .size(SizeMenu.chooseSize(scanner))
+                .material(MaterialMenu.chooseMaterial(scanner))
+                .colour(ColourMenu.chooseColour(scanner))
+                .build();
+
+        System.out.println("----------------------------------------------------------------------------------------");
+        System.out.println("Build method complete");
+
+        PantsMenu.chooseFit(scanner, pants, clothesModifier);
+        PantsMenu.chooseLength(scanner, pants, clothesModifier);
+
+        basket.add(pants);
+    }
 
     public static void chooseFit(Scanner scanner, Pants pants, ClothesModifier clothesModifier) {
         while (true) {

@@ -1,9 +1,9 @@
-package org.example.clothing.pants.commands;
+package org.example.clothing.pants.command;
 
-import org.example.clothing.ClothesModification;
+import org.example.clothing.ClothesCommand;
 import org.example.clothing.pants.Pants;
 
-public class PantsSetLengthToShorts implements ClothesModification {
+public class PantsSetLengthToShorts implements ClothesCommand {
     private final Pants pants;
 
     public PantsSetLengthToShorts(Pants pants) {

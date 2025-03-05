@@ -1,13 +1,13 @@
 package org.example.clothing;
 
 public class ClothesModifier {
-    private ClothesModification clothesModification;
+    private ClothesCommand clothesCommand;
 
-    public void setClothesModification(ClothesModification clothesModification) {
-        this.clothesModification = clothesModification;
+    public void setClothesModification(ClothesCommand clothesCommand) {
+        this.clothesCommand = clothesCommand;
     }
 
     public void confirm() {
-        clothesModification.execute();
+        clothesCommand.execute();
     }
 }

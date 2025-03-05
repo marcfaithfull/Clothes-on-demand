@@ -1,16 +1,33 @@
 package org.example.menu;
 
 import org.example.clothing.ClothesModifier;
+import org.example.clothing.ItemOfClothing;
 import org.example.clothing.tshirt.TShirt;
-import org.example.clothing.tshirt.commands.TShirtSetNeckToRegular;
-import org.example.clothing.tshirt.commands.TShirtSetNeckToVNeck;
-import org.example.clothing.tshirt.commands.TShirtSetSleevesToLong;
-import org.example.clothing.tshirt.commands.TShirtSetSleevesToShort;
+import org.example.clothing.tshirt.command.TShirtSetNeckToRegular;
+import org.example.clothing.tshirt.command.TShirtSetNeckToVNeck;
+import org.example.clothing.tshirt.command.TShirtSetSleevesToLong;
+import org.example.clothing.tshirt.command.TShirtSetSleevesToShort;
 
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 public class TShirtMenu {
+
+    public static void buildTShirt(Scanner scanner, ClothesModifier clothesModifier, List<ItemOfClothing> basket) {
+        TShirt tShirt = new TShirt.TShirtBuilder()
+                .size(SizeMenu.chooseSize(scanner))
+                .material(MaterialMenu.chooseMaterial(scanner))
+                .colour(ColourMenu.chooseColour(scanner))
+                .build();
+
+        System.out.println("----------------------------------------------------------------------------------------");
+        System.out.println("Build method complete");
+
+        TShirtMenu.chooseSleeves(scanner, tShirt, clothesModifier);
+        TShirtMenu.chooseNeck(scanner, tShirt, clothesModifier);
+        basket.add(tShirt);
+    }
 
     public static void chooseSleeves(Scanner scanner, TShirt tShirt, ClothesModifier clothesModifier) {
         while (true) {
