@@ -6,9 +6,9 @@ import org.example.material.Material;
 import org.example.size.Size;
 
 public class Skirt extends ItemOfClothing {
-    private int id;
-    private String name;
-    private int price;
+    private int id = 130;
+    private String name = "Skirt";
+    private int price = 400;
     private Size size;
     private Material material;
     private Colour colour;
