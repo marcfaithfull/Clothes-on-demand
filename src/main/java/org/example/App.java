@@ -1,6 +1,6 @@
 package org.example;
 
-import org.example.clothing.pants.Pants;
+import org.example.clothing.pants.*;
 import org.example.clothing.Skirt;
 import org.example.clothing.TShirt;
 import org.example.colour.BlueColour;
@@ -22,10 +22,21 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
+
+        Pants pants = new Pants();
+        PantsStyleInvoker pantsStyleInvoker = new PantsStyleInvoker();
+        PantsCommand makeBaggy = new PantsSetFitToWideCommand();
+        pantsStyleInvoker.setStyle(pants, makeBaggy);
+        System.out.println(pants);
+        PantsCommand makeRegular = new PantsSetFitToRegularCommand();
+        pantsStyleInvoker.setStyle(pants, makeRegular);
+        System.out.println(pants);
+
+
         Size size;
         Material material;
         Colour colour;
-        Pants pants = null;
+        //Pants pants = null;
         TShirt tShirt = null;
         Skirt skirt = null;
 
@@ -56,7 +67,7 @@ public class App {
 
                     System.out.println("Build method complete");
 
-                    chooseFit(scanner, pants);
+                    //chooseFit(scanner, pants);
                     chooseLength(scanner, pants);
 
                     System.out.println(pants);
@@ -102,36 +113,36 @@ public class App {
         }
     }
 
-    private static void chooseFit(Scanner scanner, Pants pants) {
-        while (true) {
-            try {
-                System.out.println("----------------------------------------------------------------------------------------");
-                System.out.println("Choose your fit");
-                System.out.println("1) Skinny");
-                System.out.println("2) Wide");
-                System.out.print("Option: ");
-
-                int fitChoice = scanner.nextInt();
-                //scanner.nextLine();
-
-                switch (fitChoice) {
-                    case 1:
-                        pants.setTightTitting(true);
-                        return;
-                    case 2:
-                        pants.setTightTitting(false);
-                        return;
-                    default:
-                        System.out.println("----------------------------------------------------------------------------------------");
-                        System.out.println("Invalid input");
-                }
-            } catch (InputMismatchException getItRightSon) {
-                System.out.println("----------------------------------------------------------------------------------------");
-                System.out.println("Invalid input");
-                scanner.nextLine();
-            }
-        }
-    }
+//    private static void chooseFit(Scanner scanner, Pants pants) {
+//        while (true) {
+//            try {
+//                System.out.println("----------------------------------------------------------------------------------------");
+//                System.out.println("Choose your fit");
+//                System.out.println("1) Skinny");
+//                System.out.println("2) Wide");
+//                System.out.print("Option: ");
+//
+//                int fitChoice = scanner.nextInt();
+//                //scanner.nextLine();
+//
+//                switch (fitChoice) {
+//                    case 1:
+//                        pants.setTightTitting(true);
+//                        return;
+//                    case 2:
+//                        pants.setTightTitting(false);
+//                        return;
+//                    default:
+//                        System.out.println("----------------------------------------------------------------------------------------");
+//                        System.out.println("Invalid input");
+//                }
+//            } catch (InputMismatchException getItRightSon) {
+//                System.out.println("----------------------------------------------------------------------------------------");
+//                System.out.println("Invalid input");
+//                scanner.nextLine();
+//            }
+//        }
+//    }
 
     public static void chooseLength(Scanner scanner, Pants pants) {
         while (true) {
@@ -147,10 +158,10 @@ public class App {
 
                 switch (lengthChoice) {
                     case 1:
-                        pants.setAreAnkleSwingers(true);
+                        pants.setAreShorts(true);
                         return;
                         case 2:
-                            pants.setAreAnkleSwingers(false);
+                            pants.setAreShorts(false);
                             return;
                             default:
                                 System.out.println("----------------------------------------------------------------------------------------");

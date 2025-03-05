@@ -11,10 +11,12 @@ public class Pants {
     private Size size;
     private Material material;
     private Colour colour;
-    private boolean areTightFitting;
-    private boolean areAnkleSwingers;
+    private boolean areWide;
+    private boolean areShorts;
 
-    PantsDecorator pantsDecorator;
+    PantsCommand pantsDecorator;
+
+    public Pants() {}
 
     public Pants(PantsBuilder pantsBuilder) {
         this.id = pantsBuilder.id;
@@ -23,9 +25,11 @@ public class Pants {
         this.size = pantsBuilder.size;
         this.material = pantsBuilder.material;
         this.colour = pantsBuilder.colour;
-        this.areTightFitting = pantsBuilder.areTightFitting;
-        this.areAnkleSwingers = pantsBuilder.areAnkleSwingers;
+        this.areWide = pantsBuilder.areWide;
+        this.areShorts = pantsBuilder.areShorts;
     }
+
+
 
     public int getId() {
         return id;
@@ -75,24 +79,25 @@ public class Pants {
         this.colour = colour;
     }
 
-    public boolean getAreTightFitting() {
-        return areTightFitting;
+    public boolean getAreWide() {
+        return areWide;
     }
 
-    public void setTightTitting(boolean areTightFitting) {
-        this.areTightFitting = areTightFitting;
+//    public void setTightTitting(boolean areTightFitting) {
+//        this.areWide = areTightFitting;
+//    }
+
+    public void setAreWide(boolean areWide) {
+        this.areWide = areWide;
+        System.out.println("Setting fit to: " + (areWide ? "Wide" : "Regular"));
     }
 
-    public boolean getAreAnkleSwingers() {
-        return areAnkleSwingers;
+    public boolean getAreShorts() {
+        return areShorts;
     }
 
-    public void setAreAnkleSwingers(boolean areAnkleSwingers) {
-        this.areAnkleSwingers = areAnkleSwingers;
-    }
-
-    public void setPantsDecorator(PantsDecorator pantsDecorator) {
-        pantsDecorator.decoratePants();
+    public void setAreShorts(boolean areShorts) {
+        this.areShorts = areShorts;
     }
 
     @Override
@@ -104,8 +109,8 @@ public class Pants {
                 ", size=" + size +
                 ", material=" + material +
                 ", colour=" + colour +
-                ", isTightFitting=" + areTightFitting +
-                ", areAnkleSwingers=" + areAnkleSwingers +
+                ", areWide=" + areWide +
+                ", areShorts=" + areShorts +
                 '}';
     }
 
@@ -116,8 +121,8 @@ public class Pants {
         private Size size;
         private Material material;
         private Colour colour;
-        private boolean areTightFitting;
-        private boolean areAnkleSwingers;
+        private boolean areWide;
+        private boolean areShorts;
 
         public PantsBuilder size(Size size) {
             this.size = size;
