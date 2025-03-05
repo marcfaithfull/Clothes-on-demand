@@ -1,5 +1,9 @@
 package org.example;
 
+import org.example.clothing.ItemOfClothing;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Customer {
@@ -9,12 +13,14 @@ public class Customer {
     private String mail;
 
     private static AtomicInteger nextId = new AtomicInteger();
+    List<ItemOfClothing> basket = new ArrayList<>();
 
-    public Customer(String name) {
+    public Customer() {
         this.id = nextId.getAndIncrement();
-        this.name = name;
-        this.address = address;
-        this.mail = mail;
+    }
+
+    public List<ItemOfClothing> getBasket() {
+        return basket;
     }
 
     public int getId() {

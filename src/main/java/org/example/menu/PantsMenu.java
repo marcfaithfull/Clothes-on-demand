@@ -1,5 +1,6 @@
 package org.example.menu;
 
+import org.example.Customer;
 import org.example.clothing.ClothesModifier;
 import org.example.clothing.ItemOfClothing;
 import org.example.clothing.pants.*;
@@ -13,7 +14,7 @@ import java.util.Scanner;
 
 public class PantsMenu {
 
-    public static void buildPants(Scanner scanner, ClothesModifier clothesModifier, List<ItemOfClothing> basket) {
+    public static void buildPants(Customer customer, Scanner scanner, ClothesModifier clothesModifier) {
         Pants pants = new Pants.PantsBuilder()
                 .size(SizeMenu.chooseSize(scanner))
                 .material(MaterialMenu.chooseMaterial(scanner))
@@ -26,7 +27,7 @@ public class PantsMenu {
         PantsMenu.chooseFit(scanner, pants, clothesModifier);
         PantsMenu.chooseLength(scanner, pants, clothesModifier);
 
-        basket.add(pants);
+        customer.getBasket().add(pants);
     }
 
     public static void chooseFit(Scanner scanner, Pants pants, ClothesModifier clothesModifier) {
@@ -39,8 +40,6 @@ public class PantsMenu {
                 System.out.print("Option: ");
 
                 int fitChoice = scanner.nextInt();
-                //scanner.nextLine();
-
                 switch (fitChoice) {
                     case 1:
                         PantsSetFitToRegular pantsSetFitToRegular = new PantsSetFitToRegular(pants);

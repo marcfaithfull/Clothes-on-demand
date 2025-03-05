@@ -1,5 +1,6 @@
 package org.example.menu;
 
+import org.example.Customer;
 import org.example.clothing.ClothesModifier;
 import org.example.clothing.ItemOfClothing;
 import org.example.clothing.tshirt.TShirt;
@@ -14,7 +15,7 @@ import java.util.Scanner;
 
 public class TShirtMenu {
 
-    public static void buildTShirt(Scanner scanner, ClothesModifier clothesModifier, List<ItemOfClothing> basket) {
+    public static void buildTShirt(Customer customer, Scanner scanner, ClothesModifier clothesModifier) {
         TShirt tShirt = new TShirt.TShirtBuilder()
                 .size(SizeMenu.chooseSize(scanner))
                 .material(MaterialMenu.chooseMaterial(scanner))
@@ -26,7 +27,8 @@ public class TShirtMenu {
 
         TShirtMenu.chooseSleeves(scanner, tShirt, clothesModifier);
         TShirtMenu.chooseNeck(scanner, tShirt, clothesModifier);
-        basket.add(tShirt);
+
+        customer.getBasket().add(tShirt);
     }
 
     public static void chooseSleeves(Scanner scanner, TShirt tShirt, ClothesModifier clothesModifier) {
