@@ -1,38 +1,37 @@
-package org.example.pages;
+package org.example.menu;
 
 import org.example.clothing.ClothesModifier;
-import org.example.clothing.pants.*;
-import org.example.clothing.pants.commands.PantsSetFitToRegular;
-import org.example.clothing.pants.commands.PantsSetFitToWide;
-import org.example.clothing.pants.commands.PantsSetLengthToRegular;
-import org.example.clothing.pants.commands.PantsSetLengthToShorts;
+import org.example.clothing.tshirt.TShirt;
+import org.example.clothing.tshirt.commands.TShirtSetNeckToRegular;
+import org.example.clothing.tshirt.commands.TShirtSetNeckToVNeck;
+import org.example.clothing.tshirt.commands.TShirtSetSleevesToLong;
+import org.example.clothing.tshirt.commands.TShirtSetSleevesToShort;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class PantsMenu {
+public class TShirtMenu {
 
-    public static void chooseFit(Scanner scanner, Pants pants, ClothesModifier clothesModifier) {
+    public static void chooseSleeves(Scanner scanner, TShirt tShirt, ClothesModifier clothesModifier) {
         while (true) {
             try {
                 System.out.println("----------------------------------------------------------------------------------------");
-                System.out.println("Choose your fit");
-                System.out.println("1) Regular");
-                System.out.println("2) Wide");
+                System.out.println("Choose sleeves");
+                System.out.println("1) Short");
+                System.out.println("2) Long");
                 System.out.print("Option: ");
 
-                int fitChoice = scanner.nextInt();
-                //scanner.nextLine();
+                int SleeveChoice = scanner.nextInt();
 
-                switch (fitChoice) {
+                switch (SleeveChoice) {
                     case 1:
-                        PantsSetFitToRegular pantsSetFitToRegular = new PantsSetFitToRegular(pants);
-                        clothesModifier.setClothesModification(pantsSetFitToRegular);
+                        TShirtSetSleevesToShort tShirtSetSleevesToShort = new TShirtSetSleevesToShort(tShirt);
+                        clothesModifier.setClothesModification(tShirtSetSleevesToShort);
                         clothesModifier.confirm();
                         return;
                     case 2:
-                        PantsSetFitToWide pantsSetFitToWide = new PantsSetFitToWide(pants);
-                        clothesModifier.setClothesModification(pantsSetFitToWide);
+                        TShirtSetSleevesToLong tShirtSetSleevesToLong = new TShirtSetSleevesToLong(tShirt);
+                        clothesModifier.setClothesModification(tShirtSetSleevesToLong);
                         clothesModifier.confirm();
                         return;
                     default:
@@ -47,26 +46,26 @@ public class PantsMenu {
         }
     }
 
-    public static void chooseLength(Scanner scanner, Pants pants, ClothesModifier clothesModifier) {
+    public static void chooseNeck(Scanner scanner, TShirt tShirt, ClothesModifier clothesModifier) {
         while (true) {
             try {
                 System.out.println("----------------------------------------------------------------------------------------");
-                System.out.println("Choose your length");
+                System.out.println("Choose your neck");
                 System.out.println("1) Regular");
-                System.out.println("2) Shorts");
+                System.out.println("2) V-Neck");
                 System.out.print("Option: ");
 
-                int lengthChoice = scanner.nextInt();
+                int NeckChoice = scanner.nextInt();
 
-                switch (lengthChoice) {
+                switch (NeckChoice) {
                     case 1:
-                        PantsSetLengthToRegular pantsSetLengthToRegular = new PantsSetLengthToRegular(pants);
-                        clothesModifier.setClothesModification(pantsSetLengthToRegular);
+                        TShirtSetNeckToRegular tShirtSetNeckToRegular = new TShirtSetNeckToRegular(tShirt);
+                        clothesModifier.setClothesModification(tShirtSetNeckToRegular);
                         clothesModifier.confirm();
                         return;
                     case 2:
-                        PantsSetLengthToShorts pantsSetLengthToShorts = new PantsSetLengthToShorts(pants);
-                        clothesModifier.setClothesModification(pantsSetLengthToShorts);
+                        TShirtSetNeckToVNeck tShirtSetNeckToVNeck = new TShirtSetNeckToVNeck(tShirt);
+                        clothesModifier.setClothesModification(tShirtSetNeckToVNeck);
                         clothesModifier.confirm();
                         return;
                     default:

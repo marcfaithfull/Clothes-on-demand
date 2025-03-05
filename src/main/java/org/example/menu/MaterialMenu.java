@@ -1,4 +1,4 @@
-package org.example.pages;
+package org.example.menu;
 
 import org.example.material.CottonMaterial;
 import org.example.material.LinenMaterial;
@@ -8,16 +8,7 @@ import org.example.material.PolyesterMaterial;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class MaterialPage {
-
-    /*public static void loadMaterialPage() {
-        System.out.println("----------------------------------------------------------------------------------------");
-        System.out.println("What material are you interested in?");
-        System.out.println("1) Cotton");
-        System.out.println("2) Polyester");
-        System.out.println("3) Linen");
-        System.out.print("Option: ");
-    }*/
+public class MaterialMenu {
 
     public static Material chooseMaterial(Scanner scanner) {
         while (true) {

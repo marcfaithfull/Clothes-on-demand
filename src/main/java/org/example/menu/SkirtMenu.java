@@ -1,4 +1,4 @@
-package org.example.pages;
+package org.example.menu;
 
 import org.example.clothing.ClothesModifier;
 import org.example.clothing.skirt.*;

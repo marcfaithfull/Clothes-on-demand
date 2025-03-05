@@ -1,4 +1,4 @@
-package org.example.pages;
+package org.example.menu;
 
 import org.example.colour.BlueColour;
 import org.example.colour.Colour;
@@ -8,16 +8,7 @@ import org.example.colour.RedColour;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class ColourPage {
-
-    /*public static void loadColourPage() {
-        System.out.println("----------------------------------------------------------------------------------------");
-        System.out.println("What colour would you like?");
-        System.out.println("1) Red");
-        System.out.println("2) Green");
-        System.out.println("3) Blue");
-        System.out.print("Option: ");
-    }*/
+public class ColourMenu {
 
     public static Colour chooseColour(Scanner scanner) {
         while (true) {
@@ -50,5 +41,3 @@ public class ColourPage {
         }
     }
 }
-
-
