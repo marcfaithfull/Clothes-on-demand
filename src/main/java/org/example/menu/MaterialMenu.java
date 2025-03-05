@@ -21,7 +21,6 @@ public class MaterialMenu {
                 System.out.print("Option: ");
 
                 int materialChoice = scanner.nextInt();
-
                 switch (materialChoice) {
                     case 1:
                         return new CottonMaterial();
@@ -32,7 +31,6 @@ public class MaterialMenu {
                     default:
                         System.out.println("----------------------------------------------------------------------------------------");
                         System.out.println("Invalid input");
-
                 }
             } catch (InputMismatchException getItRightSon) {
                 System.out.println("----------------------------------------------------------------------------------------");

@@ -7,6 +7,7 @@ import org.example.clothing.pants.command.PantsSetFitToRegular;
 import org.example.clothing.pants.command.PantsSetFitToWide;
 import org.example.clothing.pants.command.PantsSetLengthToRegular;
 import org.example.clothing.pants.command.PantsSetLengthToShorts;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -71,7 +72,6 @@ public class PantsMenu {
                 System.out.print("Option: ");
 
                 int lengthChoice = scanner.nextInt();
-
                 switch (lengthChoice) {
                     case 1:
                         PantsSetLengthToRegular pantsSetLengthToRegular = new PantsSetLengthToRegular(pants);
