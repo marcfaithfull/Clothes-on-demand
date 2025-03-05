@@ -1,5 +1,6 @@
 package org.example.clothing.pants;
 
+import org.example.clothing.ClothesModification;
 import org.example.colour.Colour;
 import org.example.material.Material;
 import org.example.size.Size;
@@ -14,7 +15,7 @@ public class Pants {
     private boolean areWide;
     private boolean areShorts;
 
-    PantsModification pantsDecorator;
+    ClothesModification clothesModification;
 
     public Pants() {}
 
@@ -89,8 +90,8 @@ public class Pants {
 
     public void setAreWide(boolean areWide) {
         this.areWide = areWide;
-        System.out.println("----------------------------------------------------------------------------------------");
-        System.out.println("Fit: " + (areWide ? "Wide" : "Regular"));
+        //System.out.println("----------------------------------------------------------------------------------------");
+        //System.out.println("Fit: " + (areWide ? "Wide" : "Regular"));
     }
 
     public boolean getAreShorts() {

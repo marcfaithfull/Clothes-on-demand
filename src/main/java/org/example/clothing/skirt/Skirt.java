@@ -1,5 +1,6 @@
 package org.example.clothing.skirt;
 
+import org.example.clothing.ClothesModification;
 import org.example.colour.Colour;
 import org.example.material.Material;
 import org.example.size.Size;
@@ -13,6 +14,8 @@ public class Skirt {
     private Colour colour;
     private boolean isHighWaistline;
     private boolean isFlowery;
+
+    ClothesModification clothesModification;
 
     public Skirt(SkirtBuilder skirtBuilder) {
         this.id = skirtBuilder.id;

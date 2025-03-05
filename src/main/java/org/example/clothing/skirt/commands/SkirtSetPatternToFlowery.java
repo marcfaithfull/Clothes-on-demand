@@ -1,7 +1,10 @@
-package org.example.clothing.skirt;
+package org.example.clothing.skirt.commands;
 
-public class SkirtSetPatternToFlowery implements SkirtModification {
-    Skirt skirt;
+import org.example.clothing.ClothesModification;
+import org.example.clothing.skirt.Skirt;
+
+public class SkirtSetPatternToFlowery implements ClothesModification {
+    private final Skirt skirt;
 
     public SkirtSetPatternToFlowery(Skirt skirt) {
         this.skirt = skirt;

@@ -1,14 +1,18 @@
 package org.example.pages;
 
+import org.example.clothing.ClothesModifier;
 import org.example.clothing.pants.*;
+import org.example.clothing.pants.commands.PantsSetFitToRegular;
+import org.example.clothing.pants.commands.PantsSetFitToWide;
+import org.example.clothing.pants.commands.PantsSetLengthToRegular;
+import org.example.clothing.pants.commands.PantsSetLengthToShorts;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class PantsMenu {
-    static PantsModifier pantsModifier = new PantsModifier();
 
-    public static void chooseFit(Scanner scanner, Pants pants) {
+    public static void chooseFit(Scanner scanner, Pants pants, ClothesModifier clothesModifier) {
         while (true) {
             try {
                 System.out.println("----------------------------------------------------------------------------------------");
@@ -23,13 +27,13 @@ public class PantsMenu {
                 switch (fitChoice) {
                     case 1:
                         PantsSetFitToRegular pantsSetFitToRegular = new PantsSetFitToRegular(pants);
-                        pantsModifier.setPantsModification(pantsSetFitToRegular);
-                        pantsModifier.confirm();
+                        clothesModifier.setClothesModification(pantsSetFitToRegular);
+                        clothesModifier.confirm();
                         return;
                     case 2:
                         PantsSetFitToWide pantsSetFitToWide = new PantsSetFitToWide(pants);
-                        pantsModifier.setPantsModification(pantsSetFitToWide);
-                        pantsModifier.confirm();
+                        clothesModifier.setClothesModification(pantsSetFitToWide);
+                        clothesModifier.confirm();
                         return;
                     default:
                         System.out.println("----------------------------------------------------------------------------------------");
@@ -43,7 +47,7 @@ public class PantsMenu {
         }
     }
 
-    public static void chooseLength(Scanner scanner, Pants pants) {
+    public static void chooseLength(Scanner scanner, Pants pants, ClothesModifier clothesModifier) {
         while (true) {
             try {
                 System.out.println("----------------------------------------------------------------------------------------");
@@ -53,18 +57,17 @@ public class PantsMenu {
                 System.out.print("Option: ");
 
                 int lengthChoice = scanner.nextInt();
-                //scanner.nextLine();
 
                 switch (lengthChoice) {
                     case 1:
                         PantsSetLengthToRegular pantsSetLengthToRegular = new PantsSetLengthToRegular(pants);
-                        pantsModifier.setPantsModification(pantsSetLengthToRegular);
-                        pantsModifier.confirm();
+                        clothesModifier.setClothesModification(pantsSetLengthToRegular);
+                        clothesModifier.confirm();
                         return;
                     case 2:
                         PantsSetLengthToShorts pantsSetLengthToShorts = new PantsSetLengthToShorts(pants);
-                        pantsModifier.setPantsModification(pantsSetLengthToShorts);
-                        pantsModifier.confirm();
+                        clothesModifier.setClothesModification(pantsSetLengthToShorts);
+                        clothesModifier.confirm();
                         return;
                     default:
                         System.out.println("----------------------------------------------------------------------------------------");

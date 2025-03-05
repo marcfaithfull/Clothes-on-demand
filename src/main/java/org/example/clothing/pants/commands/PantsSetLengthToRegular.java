@@ -1,7 +1,10 @@
-package org.example.clothing.pants;
+package org.example.clothing.pants.commands;
 
-public class PantsSetLengthToRegular implements PantsModification {
-    Pants pants;
+import org.example.clothing.ClothesModification;
+import org.example.clothing.pants.Pants;
+
+public class PantsSetLengthToRegular implements ClothesModification {
+    private final Pants pants;
 
     public PantsSetLengthToRegular(Pants pants) {
         this.pants = pants;

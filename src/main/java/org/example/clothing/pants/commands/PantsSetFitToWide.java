@@ -1,7 +1,10 @@
-package org.example.clothing.pants;
+package org.example.clothing.pants.commands;
 
-public class PantsSetFitToWide implements PantsModification {
-    Pants pants;
+import org.example.clothing.ClothesModification;
+import org.example.clothing.pants.Pants;
+
+public class PantsSetFitToWide implements ClothesModification {
+    private final Pants pants;
 
     public PantsSetFitToWide(Pants pants) {
         this.pants = pants;

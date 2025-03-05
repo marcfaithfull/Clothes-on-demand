@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.clothing.ClothesModifier;
 import org.example.clothing.pants.*;
 import org.example.clothing.skirt.Skirt;
 import org.example.clothing.tshirt.TShirt;
@@ -44,6 +45,8 @@ public class App {
         TShirt tShirt = null;
         Skirt skirt = null;
 
+        ClothesModifier clothesModifier = new ClothesModifier();
+
         WelcomePage.loadWelcomePage();
         Scanner scanner = new Scanner(System.in);
         String name = scanner.nextLine();
@@ -71,8 +74,8 @@ public class App {
 
                     System.out.println("Build method complete");
 
-                    PantsMenu.chooseFit(scanner, pants);
-                    PantsMenu.chooseLength(scanner, pants);
+                    PantsMenu.chooseFit(scanner, pants, clothesModifier);
+                    PantsMenu.chooseLength(scanner, pants, clothesModifier);
 
                     System.out.println(pants);
 
@@ -105,8 +108,8 @@ public class App {
 
                     System.out.println("Build method complete");
 
-                    SkirtMenu.chooseWaistline(scanner, skirt);
-                    SkirtMenu.choosePattern(scanner, skirt);
+                    SkirtMenu.chooseWaistline(scanner, skirt, clothesModifier);
+                    SkirtMenu.choosePattern(scanner, skirt, clothesModifier);
 
                 default:
                     ProductPage.loadErrorMessage();

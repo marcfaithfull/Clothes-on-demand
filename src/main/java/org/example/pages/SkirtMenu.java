@@ -1,13 +1,18 @@
 package org.example.pages;
 
+import org.example.clothing.ClothesModifier;
 import org.example.clothing.skirt.*;
+import org.example.clothing.skirt.commands.SkirtSetPatternToFlowery;
+import org.example.clothing.skirt.commands.SkirtSetPatternToPlain;
+import org.example.clothing.skirt.commands.SkirtSetWaistlineToHigh;
+import org.example.clothing.skirt.commands.SkirtSetWaistlineToRegular;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class SkirtMenu {
-    static SkirtModifier skirtModifier = new SkirtModifier();
 
-    public static void chooseWaistline(Scanner scanner, Skirt skirt) {
+    public static void chooseWaistline(Scanner scanner, Skirt skirt, ClothesModifier clothesModifier) {
         while (true) {
             try {
                 System.out.println("----------------------------------------------------------------------------------------");
@@ -21,13 +26,13 @@ public class SkirtMenu {
                 switch (waistlineChoice) {
                     case 1:
                         SkirtSetWaistlineToRegular skirtSetWaistlineToRegular = new SkirtSetWaistlineToRegular(skirt);
-                        skirtModifier.setSkirtModification(skirtSetWaistlineToRegular);
-                        skirtModifier.confirm();
+                        clothesModifier.setClothesModification(skirtSetWaistlineToRegular);
+                        clothesModifier.confirm();
                         return;
                     case 2:
                         SkirtSetWaistlineToHigh skirtSetWaistlineToHigh = new SkirtSetWaistlineToHigh(skirt);
-                        skirtModifier.setSkirtModification(skirtSetWaistlineToHigh);
-                        skirtModifier.confirm();
+                        clothesModifier.setClothesModification(skirtSetWaistlineToHigh);
+                        clothesModifier.confirm();
                         return;
                     default:
                         System.out.println("----------------------------------------------------------------------------------------");
@@ -41,7 +46,7 @@ public class SkirtMenu {
         }
     }
 
-    public static void choosePattern(Scanner scanner, Skirt skirt) {
+    public static void choosePattern(Scanner scanner, Skirt skirt, ClothesModifier clothesModifier) {
         while (true) {
             try {
                 System.out.println("----------------------------------------------------------------------------------------");
@@ -55,13 +60,13 @@ public class SkirtMenu {
                 switch (PatternChoice) {
                     case 1:
                         SkirtSetPatternToPlain skirtSetPatternToPlain = new SkirtSetPatternToPlain(skirt);
-                        skirtModifier.setSkirtModification(skirtSetPatternToPlain);
-                        skirtModifier.confirm();
+                        clothesModifier.setClothesModification(skirtSetPatternToPlain);
+                        clothesModifier.confirm();
                         return;
                     case 2:
                         SkirtSetPatternToFlowery skirtSetPatternToFlowery = new SkirtSetPatternToFlowery(skirt);
-                        skirtModifier.setSkirtModification(skirtSetPatternToFlowery);
-                        skirtModifier.confirm();
+                        clothesModifier.setClothesModification(skirtSetPatternToFlowery);
+                        clothesModifier.confirm();
                         return;
                     default:
                         System.out.println("----------------------------------------------------------------------------------------");
