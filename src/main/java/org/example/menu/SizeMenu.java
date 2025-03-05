@@ -21,8 +21,6 @@ public class SizeMenu {
                 System.out.print("Option: ");
 
                 int sizeChoice = scanner.nextInt();
-                //scanner.nextLine();
-
                 switch (sizeChoice) {
                     case 1:
                         return new SmallSize();

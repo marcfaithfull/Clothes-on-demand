@@ -1,23 +1,16 @@
 package org.example;
 
 import org.example.clothing.ClothesModifier;
-import org.example.clothing.ItemOfClothing;
-import org.example.clothing.skirt.Skirt;
-import org.example.clothing.tshirt.TShirt;
 import org.example.menu.*;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
-import java.util.UUID;
 
 public class App {
     public static void main(String[] args) {
         Customer customer = new Customer();
-        ClothesModifier clothesModifier = new ClothesModifier();
         Scanner scanner = new Scanner(System.in);
+        ClothesModifier clothesModifier = new ClothesModifier();
 
-        /*MainMenu.loadWelcomeMenu();
+        MainMenu.loadWelcomeMenu();
         customer.setName(scanner.nextLine());
 
         boolean programIsActive = true;
@@ -45,6 +38,6 @@ public class App {
             if (MainMenu.finaliseOrder(customer, scanner)) {
                 programIsActive = false;
             }
-        }*/
+        }
     }
 }

@@ -2,7 +2,6 @@ package org.example.menu;
 
 import org.example.Customer;
 import org.example.clothing.ClothesModifier;
-import org.example.clothing.ItemOfClothing;
 import org.example.clothing.skirt.*;
 import org.example.clothing.skirt.command.SkirtSetPatternToFlowery;
 import org.example.clothing.skirt.command.SkirtSetPatternToPlain;
@@ -10,7 +9,6 @@ import org.example.clothing.skirt.command.SkirtSetWaistlineToHigh;
 import org.example.clothing.skirt.command.SkirtSetWaistlineToRegular;
 
 import java.util.InputMismatchException;
-import java.util.List;
 import java.util.Scanner;
 
 public class SkirtMenu {
@@ -41,7 +39,6 @@ public class SkirtMenu {
                 System.out.print("Option: ");
 
                 int waistlineChoice = scanner.nextInt();
-
                 switch (waistlineChoice) {
                     case 1:
                         SkirtSetWaistlineToRegular skirtSetWaistlineToRegular = new SkirtSetWaistlineToRegular(skirt);
@@ -75,7 +72,6 @@ public class SkirtMenu {
                 System.out.print("Option: ");
 
                 int PatternChoice = scanner.nextInt();
-
                 switch (PatternChoice) {
                     case 1:
                         SkirtSetPatternToPlain skirtSetPatternToPlain = new SkirtSetPatternToPlain(skirt);

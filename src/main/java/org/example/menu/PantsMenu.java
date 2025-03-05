@@ -2,14 +2,12 @@ package org.example.menu;
 
 import org.example.Customer;
 import org.example.clothing.ClothesModifier;
-import org.example.clothing.ItemOfClothing;
 import org.example.clothing.pants.*;
 import org.example.clothing.pants.command.PantsSetFitToRegular;
 import org.example.clothing.pants.command.PantsSetFitToWide;
 import org.example.clothing.pants.command.PantsSetLengthToRegular;
 import org.example.clothing.pants.command.PantsSetLengthToShorts;
 import java.util.InputMismatchException;
-import java.util.List;
 import java.util.Scanner;
 
 public class PantsMenu {

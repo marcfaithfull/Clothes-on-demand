@@ -2,7 +2,6 @@ package org.example.menu;
 
 import org.example.Customer;
 import org.example.clothing.ClothesModifier;
-import org.example.clothing.ItemOfClothing;
 import org.example.clothing.tshirt.TShirt;
 import org.example.clothing.tshirt.command.TShirtSetNeckToRegular;
 import org.example.clothing.tshirt.command.TShirtSetNeckToVNeck;
@@ -10,7 +9,6 @@ import org.example.clothing.tshirt.command.TShirtSetSleevesToLong;
 import org.example.clothing.tshirt.command.TShirtSetSleevesToShort;
 
 import java.util.InputMismatchException;
-import java.util.List;
 import java.util.Scanner;
 
 public class TShirtMenu {
@@ -41,7 +39,6 @@ public class TShirtMenu {
                 System.out.print("Option: ");
 
                 int SleeveChoice = scanner.nextInt();
-
                 switch (SleeveChoice) {
                     case 1:
                         TShirtSetSleevesToShort tShirtSetSleevesToShort = new TShirtSetSleevesToShort(tShirt);
@@ -75,7 +72,6 @@ public class TShirtMenu {
                 System.out.print("Option: ");
 
                 int NeckChoice = scanner.nextInt();
-
                 switch (NeckChoice) {
                     case 1:
                         TShirtSetNeckToRegular tShirtSetNeckToRegular = new TShirtSetNeckToRegular(tShirt);
