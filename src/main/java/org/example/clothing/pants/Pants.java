@@ -14,7 +14,7 @@ public class Pants {
     private boolean areWide;
     private boolean areShorts;
 
-    PantsCommand pantsDecorator;
+    PantsModification pantsDecorator;
 
     public Pants() {}
 

@@ -6,7 +6,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class PantsMenu {
-    static PantsInvoker pantsInvoker = new PantsInvoker();
+    static PantsModifier pantsModifier = new PantsModifier();
 
     public static void chooseFit(Scanner scanner, Pants pants) {
         while (true) {
@@ -22,13 +22,14 @@ public class PantsMenu {
 
                 switch (fitChoice) {
                     case 1:
-                        PantsSetFitToRegular pantsSetFitToRegular = new PantsSetFitToRegular();
-                        pantsSetFitToRegular.execute(pants);
-                        pantsInvoker.setStyle(pants, pantsSetFitToRegular);
+                        PantsSetFitToRegular pantsSetFitToRegular = new PantsSetFitToRegular(pants);
+                        pantsModifier.setPantsModification(pantsSetFitToRegular);
+                        pantsModifier.confirm();
                         return;
                     case 2:
-                        PantsSetFitToWide pantsSetFitToWide = new PantsSetFitToWide();
-                        pantsInvoker.setStyle(pants, pantsSetFitToWide);
+                        PantsSetFitToWide pantsSetFitToWide = new PantsSetFitToWide(pants);
+                        pantsModifier.setPantsModification(pantsSetFitToWide);
+                        pantsModifier.confirm();
                         return;
                     default:
                         System.out.println("----------------------------------------------------------------------------------------");
@@ -56,12 +57,14 @@ public class PantsMenu {
 
                 switch (lengthChoice) {
                     case 1:
-                        PantsSetLengthToRegular pantsSetLengthToRegular = new PantsSetLengthToRegular();
-                        pantsInvoker.setStyle(pants, pantsSetLengthToRegular);
+                        PantsSetLengthToRegular pantsSetLengthToRegular = new PantsSetLengthToRegular(pants);
+                        pantsModifier.setPantsModification(pantsSetLengthToRegular);
+                        pantsModifier.confirm();
                         return;
                     case 2:
-                        PantsSetLengthToShorts pantsSetLengthToShorts = new PantsSetLengthToShorts();
-                        pantsInvoker.setStyle(pants, pantsSetLengthToShorts);
+                        PantsSetLengthToShorts pantsSetLengthToShorts = new PantsSetLengthToShorts(pants);
+                        pantsModifier.setPantsModification(pantsSetLengthToShorts);
+                        pantsModifier.confirm();
                         return;
                     default:
                         System.out.println("----------------------------------------------------------------------------------------");
