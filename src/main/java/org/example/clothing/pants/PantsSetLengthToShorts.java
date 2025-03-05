@@ -10,6 +10,7 @@ public class PantsSetLengthToShorts implements PantsModification {
     @Override
     public void execute() {
         pants.setAreShorts(true);
+        System.out.println("----------------------------------------------------------------------------------------");
         System.out.println("LENGTH SHORTS");
     }
 }

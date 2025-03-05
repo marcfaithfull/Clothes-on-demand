@@ -10,6 +10,7 @@ public class PantsSetFitToRegular implements PantsModification {
     @Override
     public void execute() {
         pants.setAreWide(false);
+        System.out.println("----------------------------------------------------------------------------------------");
         System.out.println("FIT REGULAR");
     }
 }

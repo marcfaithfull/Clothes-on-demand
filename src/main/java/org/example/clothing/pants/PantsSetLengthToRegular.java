@@ -10,6 +10,7 @@ public class PantsSetLengthToRegular implements PantsModification {
     @Override
     public void execute() {
         pants.setAreShorts(false);
+        System.out.println("----------------------------------------------------------------------------------------");
         System.out.println("LENGTH REGULAR");
     }
 }

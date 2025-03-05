@@ -12,7 +12,7 @@ public class Skirt {
     private Material material;
     private Colour colour;
     private boolean isHighWaistline;
-    private boolean isStripy;
+    private boolean isFlowery;
 
     public Skirt(SkirtBuilder skirtBuilder) {
         this.id = skirtBuilder.id;
@@ -22,7 +22,7 @@ public class Skirt {
         this.material = skirtBuilder.material;
         this.colour = skirtBuilder.colour;
         this.isHighWaistline = skirtBuilder.isHighWaistline;
-        this.isStripy = skirtBuilder.isStripy;
+        this.isFlowery = skirtBuilder.isFlowery;
     }
 
     public int getId() {
@@ -81,12 +81,12 @@ public class Skirt {
         isHighWaistline = highWaistline;
     }
 
-    public boolean isStripy() {
-        return isStripy;
+    public boolean isFlowery() {
+        return isFlowery;
     }
 
-    public void setStripy(boolean stripy) {
-        isStripy = stripy;
+    public void setFlowery(boolean flowery) {
+        isFlowery = flowery;
     }
 
     @Override
@@ -99,7 +99,7 @@ public class Skirt {
                 ", material=" + material +
                 ", colour=" + colour +
                 ", isHighWaistline=" + isHighWaistline +
-                ", isStripy=" + isStripy +
+                ", isFlowery=" + isFlowery +
                 '}';
     }
 
@@ -111,7 +111,7 @@ public class Skirt {
         private Material material;
         private Colour colour;
         private boolean isHighWaistline;
-        private boolean isStripy;
+        private boolean isFlowery;
 
         public SkirtBuilder size(Size size) {
             this.size = size;

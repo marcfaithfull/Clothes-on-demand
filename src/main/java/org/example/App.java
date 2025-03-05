@@ -102,7 +102,11 @@ public class App {
                             .build();
 
                     System.out.println("----------------------------------------------------------------------------------------");
-                    System.out.println(skirt);
+
+                    System.out.println("Build method complete");
+
+                    SkirtMenu.chooseWaistline(scanner, skirt);
+                    SkirtMenu.choosePattern(scanner, skirt);
 
                 default:
                     ProductPage.loadErrorMessage();
