@@ -1,11 +1,14 @@
 package org.example;
 
 import org.example.clothing.ClothesModifier;
+import org.example.clothing.ItemOfClothing;
 import org.example.clothing.pants.*;
 import org.example.clothing.skirt.Skirt;
 import org.example.clothing.tshirt.TShirt;
 import org.example.menu.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class App {
@@ -14,6 +17,8 @@ public class App {
         TShirt tShirt = null;
         Skirt skirt = null;
         ClothesModifier clothesModifier = new ClothesModifier();
+
+        List<ItemOfClothing> basket = new ArrayList<>();
 
         MainMenu.loadWelcomeMenu();
         Scanner scanner = new Scanner(System.in);
@@ -43,6 +48,9 @@ public class App {
                     PantsMenu.chooseFit(scanner, pants, clothesModifier);
                     PantsMenu.chooseLength(scanner, pants, clothesModifier);
 
+                    System.out.println("Would you like to add this to your basket?");
+                    basket.add(pants);
+
                     // Inform CEO that an order is in place
                     // Place order?
                     // Send receipt
@@ -60,6 +68,7 @@ public class App {
 
                     TShirtMenu.chooseSleeves(scanner, tShirt, clothesModifier);
                     TShirtMenu.chooseNeck(scanner, tShirt, clothesModifier);
+                    basket.add(tShirt);
                     break;
 
                 case 3:
@@ -74,6 +83,7 @@ public class App {
 
                     SkirtMenu.chooseWaistline(scanner, skirt, clothesModifier);
                     SkirtMenu.choosePattern(scanner, skirt, clothesModifier);
+                    basket.add(skirt);
                     break;
 
                 default:
@@ -86,6 +96,8 @@ public class App {
             System.out.println(skirt);
             System.out.println("----------------------------------------------------------------------------------------");
             System.out.println("Happy happy");
+            System.out.println("----------------------------------------------------------------------------------------");
+            System.out.println(basket);
         }
     }
 }

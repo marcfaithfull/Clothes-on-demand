@@ -1,11 +1,12 @@
 package org.example.clothing.skirt;
 
 import org.example.clothing.ClothesModification;
+import org.example.clothing.ItemOfClothing;
 import org.example.colour.Colour;
 import org.example.material.Material;
 import org.example.size.Size;
 
-public class Skirt {
+public class Skirt extends ItemOfClothing {
     private int id;
     private String name;
     private int price;
@@ -15,7 +16,9 @@ public class Skirt {
     private boolean isHighWaistline;
     private boolean isFlowery;
 
-    ClothesModification clothesModification;
+    //ClothesModification clothesModification;
+
+    public Skirt() {}
 
     public Skirt(SkirtBuilder skirtBuilder) {
         this.id = skirtBuilder.id;

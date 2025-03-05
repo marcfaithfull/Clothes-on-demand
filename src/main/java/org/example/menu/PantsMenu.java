@@ -1,6 +1,7 @@
 package org.example.menu;
 
 import org.example.clothing.ClothesModifier;
+import org.example.clothing.ItemOfClothing;
 import org.example.clothing.pants.*;
 import org.example.clothing.pants.commands.PantsSetFitToRegular;
 import org.example.clothing.pants.commands.PantsSetFitToWide;
