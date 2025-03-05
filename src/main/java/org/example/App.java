@@ -80,12 +80,12 @@ public class App {
                     MainMenu.loadErrorMessage();
                     continue;
             }
+            System.out.println("----------------------------------------------------------------------------------------");
             System.out.println(pants);
             System.out.println(tShirt);
             System.out.println(skirt);
             System.out.println("----------------------------------------------------------------------------------------");
             System.out.println("Happy happy");
-            //scanner.nextLine();
         }
     }
 }
