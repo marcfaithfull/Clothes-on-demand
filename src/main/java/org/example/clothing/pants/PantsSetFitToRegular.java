@@ -1,6 +1,6 @@
 package org.example.clothing.pants;
 
-public class PantsSetFitToRegularCommand implements PantsCommand {
+public class PantsSetFitToRegular implements PantsCommand {
     private boolean areBaggy;
 
     @Override

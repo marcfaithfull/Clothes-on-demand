@@ -89,7 +89,8 @@ public class Pants {
 
     public void setAreWide(boolean areWide) {
         this.areWide = areWide;
-        System.out.println("Setting fit to: " + (areWide ? "Wide" : "Regular"));
+        System.out.println("----------------------------------------------------------------------------------------");
+        System.out.println("Fit: " + (areWide ? "Wide" : "Regular"));
     }
 
     public boolean getAreShorts() {

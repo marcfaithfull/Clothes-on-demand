@@ -1,6 +1,6 @@
 package org.example.clothing.pants;
 
-public class PantsSetFitToWideCommand implements PantsCommand {
+public class PantsSetFitToWide implements PantsCommand {
 
     @Override
     public void execute(Pants pants) {
