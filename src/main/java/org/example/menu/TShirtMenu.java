@@ -26,7 +26,7 @@ public class TShirtMenu {
         TShirtMenu.chooseSleeves(scanner, tShirt, clothesModifier);
         TShirtMenu.chooseNeck(scanner, tShirt, clothesModifier);
 
-        customer.getBasket().add(tShirt);
+        customer.addItemToBasket(tShirt);
     }
 
     public static void chooseSleeves(Scanner scanner, TShirt tShirt, ClothesModifier clothesModifier) {

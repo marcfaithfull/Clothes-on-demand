@@ -7,8 +7,8 @@ import java.util.Scanner;
 public class MainMenu {
 
     public static void loadWelcomeMenu() {
-        System.out.println("Welcome to CLOTHES ON DEMAND");
-        System.out.print("Please Enter your name to continue: ");
+        System.out.println("Welcome to CLOTHES ON DEMAND!");
+        System.out.print("All we need is your first name to continue: ");
     }
 
     public static void loadProductMenu(Customer customer) {
@@ -27,7 +27,7 @@ public class MainMenu {
 
     public static void customerDetails(Customer customer, Scanner scanner) {
         System.out.println("----------------------------------------------------------------------------------------");
-        System.out.println("Okay then we just need a few more details from you to process your order.");
+        System.out.println("Perfect! We just need a few more details from you.");
 
         System.out.print("Your full name: ");
         scanner.nextLine();
@@ -47,7 +47,7 @@ public class MainMenu {
                 System.out.println("----------------------------------------------------------------------------------------");
                 System.out.println("You've completed all the steps. What would you like to do?");
                 System.out.println("1) Continue shopping");
-                System.out.println("2) Place order");
+                System.out.println("2) Confirm order");
                 System.out.print("Option: ");
 
                 int continueShopping = scanner.nextInt();
@@ -59,9 +59,6 @@ public class MainMenu {
                             MainMenu.customerDetails(customer, scanner);
                         }
                         return true;
-                        // Inform CEO that an order is in place
-                        // Receipt
-                        // Order is finished
                 }
             } catch (Exception e) {
                 MainMenu.loadErrorMessage();

@@ -26,7 +26,7 @@ public class PantsMenu {
         PantsMenu.chooseFit(scanner, pants, clothesModifier);
         PantsMenu.chooseLength(scanner, pants, clothesModifier);
 
-        customer.getBasket().add(pants);
+        customer.addItemToBasket(pants);
     }
 
     public static void chooseFit(Scanner scanner, Pants pants, ClothesModifier clothesModifier) {

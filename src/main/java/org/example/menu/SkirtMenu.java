@@ -26,7 +26,7 @@ public class SkirtMenu {
         SkirtMenu.chooseWaistline(scanner, skirt, clothesModifier);
         SkirtMenu.choosePattern(scanner, skirt, clothesModifier);
 
-        customer.getBasket().add(skirt);
+        customer.addItemToBasket(skirt);
     }
 
     public static void chooseWaistline(Scanner scanner, Skirt skirt, ClothesModifier clothesModifier) {

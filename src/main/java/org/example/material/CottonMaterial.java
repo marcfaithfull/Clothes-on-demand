@@ -1,8 +1,8 @@
 package org.example.material;
 
 public class CottonMaterial implements Material {
-    @Override
-    public void applyMaterial() {
-        System.out.println("Cotton");
+
+    public String toString() {
+        return "Cotton";
     }
 }

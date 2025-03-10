@@ -6,9 +6,9 @@ import org.example.material.Material;
 import org.example.size.Size;
 
 public class Pants extends ItemOfClothing {
-    private int id = 65;
-    private String name = "Pants";
-    private int price = 500;
+    private int id;
+    private String name;
+    private int price;
     private Size size;
     private Material material;
     private Colour colour;
@@ -27,8 +27,6 @@ public class Pants extends ItemOfClothing {
         this.areWide = pantsBuilder.areWide;
         this.areShorts = pantsBuilder.areShorts;
     }
-
-
 
     public int getId() {
         return id;
@@ -82,14 +80,8 @@ public class Pants extends ItemOfClothing {
         return areWide;
     }
 
-//    public void setTightTitting(boolean areTightFitting) {
-//        this.areWide = areTightFitting;
-//    }
-
     public void setAreWide(boolean areWide) {
         this.areWide = areWide;
-        //System.out.println("----------------------------------------------------------------------------------------");
-        //System.out.println("Fit: " + (areWide ? "Wide" : "Regular"));
     }
 
     public boolean getAreShorts() {
@@ -102,22 +94,23 @@ public class Pants extends ItemOfClothing {
 
     @Override
     public String toString() {
-        return "Pants{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", price=" + price +
-                ", size=" + size +
-                ", material=" + material +
-                ", colour=" + colour +
-                ", areWide=" + areWide +
-                ", areShorts=" + areShorts +
+        return "-----------------------------------------" +
+                "\nItem of clothing: Pants" +
+                "\nId# " + getId() +
+                "\nName: " + getName() +
+                "\nPrice: " + getPrice() +
+                "\nSize: " + size +
+                "\nMaterial: " + material +
+                "\nColour: " + colour +
+                "\nFit: " + areWide +
+                "\nLength: " + areShorts +
                 '}';
     }
 
     public static class PantsBuilder {
-        private int id;
-        private String name;
-        private int price;
+        private int id = 65;
+        private String name = "Fancy Pants";
+        private int price = 500;
         private Size size;
         private Material material;
         private Colour colour;
@@ -142,5 +135,7 @@ public class Pants extends ItemOfClothing {
         public Pants build() {
             return new Pants(this);
         }
+
+
     }
 }
