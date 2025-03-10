@@ -99,8 +99,8 @@ public class Skirt extends ItemOfClothing {
                 "\nSize: " + size +
                 "\nMaterial: " + material +
                 "\nColour: " + colour +
-                "\nHigh waistline?: " + isHighWaistline +
-                "\nFlowery?: " + isFlowery;
+                "\nHigh waistline: " + isHighWaistline +
+                "\nFlowery: " + isFlowery;
     }
 
     public static class SkirtBuilder {

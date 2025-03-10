@@ -99,8 +99,8 @@ public class TShirt extends ItemOfClothing {
                 "\nSize: " + size +
                 "\nMaterial: " + material +
                 "\nColour: " + colour +
-                "\nLong Sleeve?: " + isLongSleeve +
-                "\nV-Neck?: " + isVNeck;
+                "\nLong Sleeve: " + isLongSleeve +
+                "\nV-Neck: " + isVNeck;
     }
 
     public static class TShirtBuilder {

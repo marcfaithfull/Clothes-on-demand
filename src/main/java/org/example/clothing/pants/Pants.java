@@ -15,8 +15,6 @@ public class Pants extends ItemOfClothing {
     private boolean areWide;
     private boolean areShorts;
 
-    public Pants() {}
-
     public Pants(PantsBuilder pantsBuilder) {
         this.id = pantsBuilder.id;
         this.name = pantsBuilder.name;
@@ -32,24 +30,12 @@ public class Pants extends ItemOfClothing {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getPrice() {
         return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
     }
 
     public Size getSize() {
@@ -76,16 +62,8 @@ public class Pants extends ItemOfClothing {
         this.colour = colour;
     }
 
-    public boolean getAreWide() {
-        return areWide;
-    }
-
     public void setAreWide(boolean areWide) {
         this.areWide = areWide;
-    }
-
-    public boolean getAreShorts() {
-        return areShorts;
     }
 
     public void setAreShorts(boolean areShorts) {
@@ -99,8 +77,8 @@ public class Pants extends ItemOfClothing {
                 "\nSize: " + size +
                 "\nMaterial: " + material +
                 "\nColour: " + colour +
-                "\nWide fit?: " + areWide +
-                "\nShorts?: " + areShorts;
+                "\nWide fit: " + areWide +
+                "\nShorts: " + areShorts;
     }
 
     public static class PantsBuilder {

@@ -12,7 +12,7 @@ public class Customer implements Subject {
     private String address;
     private String mail;
 
-    private static AtomicInteger nextId = new AtomicInteger();
+    private static final AtomicInteger nextId = new AtomicInteger();
     List<ItemOfClothing> basket = new ArrayList<>();
     List<Observer> observers = new ArrayList<>();
 
@@ -22,14 +22,6 @@ public class Customer implements Subject {
 
     public List<ItemOfClothing> getBasket() {
         return basket;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -76,11 +68,5 @@ public class Customer implements Subject {
     public void addItemToBasket(ItemOfClothing itemOfClothing) {
         basket.add(itemOfClothing);
         notifyObservers("An item of clothing is being manufactured");
-    }
-
-    public void getBasketItems() {
-        for (ItemOfClothing itemOfClothing : basket) {
-            System.out.println(itemOfClothing);
-        }
     }
 }

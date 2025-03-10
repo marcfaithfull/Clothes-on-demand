@@ -3,10 +3,7 @@ package org.example;
 import org.example.clothing.ItemOfClothing;
 
 import java.time.LocalDateTime;
-import java.time.Year;
-import java.time.YearMonth;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -23,26 +20,12 @@ public class Order implements Subject {
         this.itemsOrdered = customer.getBasket();
     }
 
-    /*public Order(int id, String name) {
-        this.id = id;
-        this.name = name;
-        this.observers = new ArrayList<>();
-    }*/
-
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     @Override
@@ -69,9 +52,4 @@ public class Order implements Subject {
     public List<ItemOfClothing> getItemsOrdered() {
         return itemsOrdered;
     }
-/*public void getItemsOrdered() {
-        for (ItemOfClothing itemOfClothing : itemsOrdered) {
-            System.out.println(itemOfClothing);
-        }
-    }*/
 }
