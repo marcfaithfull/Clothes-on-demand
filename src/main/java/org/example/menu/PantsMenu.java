@@ -20,9 +20,6 @@ public class PantsMenu {
                 .colour(ColourMenu.chooseColour(scanner))
                 .build();
 
-        System.out.println("----------------------------------------------------------------------------------------");
-        System.out.println("Build method complete");
-
         PantsMenu.chooseFit(scanner, pants, clothesModifier);
         PantsMenu.chooseLength(scanner, pants, clothesModifier);
 

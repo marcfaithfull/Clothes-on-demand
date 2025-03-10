@@ -20,9 +20,6 @@ public class TShirtMenu {
                 .colour(ColourMenu.chooseColour(scanner))
                 .build();
 
-        System.out.println("----------------------------------------------------------------------------------------");
-        System.out.println("Build method complete");
-
         TShirtMenu.chooseSleeves(scanner, tShirt, clothesModifier);
         TShirtMenu.chooseNeck(scanner, tShirt, clothesModifier);
 

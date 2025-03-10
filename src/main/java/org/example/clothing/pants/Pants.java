@@ -94,23 +94,19 @@ public class Pants extends ItemOfClothing {
 
     @Override
     public String toString() {
-        return "-----------------------------------------" +
-                "\nItem of clothing: Pants" +
-                "\nId# " + getId() +
-                "\nName: " + getName() +
-                "\nPrice: " + getPrice() +
+        return  getName() + " (#" + getId() + ")" +
+                "\nPrice: " + getPrice() + "kr" +
                 "\nSize: " + size +
                 "\nMaterial: " + material +
                 "\nColour: " + colour +
-                "\nFit: " + areWide +
-                "\nLength: " + areShorts +
-                '}';
+                "\nWide fit?: " + areWide +
+                "\nShorts?: " + areShorts;
     }
 
     public static class PantsBuilder {
-        private int id = 65;
-        private String name = "Fancy Pants";
-        private int price = 500;
+        private final int id = 65;
+        private final String name = "Pants";
+        private final int price = 500;
         private Size size;
         private Material material;
         private Colour colour;
@@ -135,7 +131,5 @@ public class Pants extends ItemOfClothing {
         public Pants build() {
             return new Pants(this);
         }
-
-
     }
 }

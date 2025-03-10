@@ -6,9 +6,9 @@ import org.example.material.Material;
 import org.example.size.Size;
 
 public class Skirt extends ItemOfClothing {
-    private int id = 130;
-    private String name = "Skirt";
-    private int price = 400;
+    private int id;
+    private String name;
+    private int price;
     private Size size;
     private Material material;
     private Colour colour;
@@ -94,22 +94,19 @@ public class Skirt extends ItemOfClothing {
 
     @Override
     public String toString() {
-        return "Skirt{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", price=" + price +
-                ", size=" + size +
-                ", material=" + material +
-                ", colour=" + colour +
-                ", isHighWaistline=" + isHighWaistline +
-                ", isFlowery=" + isFlowery +
-                '}';
+        return  getName() + " (#" + getId() + ")" +
+                "\nPrice: " + getPrice() + "kr" +
+                "\nSize: " + size +
+                "\nMaterial: " + material +
+                "\nColour: " + colour +
+                "\nHigh waistline?: " + isHighWaistline +
+                "\nFlowery?: " + isFlowery;
     }
 
     public static class SkirtBuilder {
-        private int id;
-        private String name;
-        private int price;
+        private final int id = 130;
+        private final String name = "Skirt";
+        private final int price = 400;
         private Size size;
         private Material material;
         private Colour colour;

@@ -1,8 +1,6 @@
 package org.example;
 
 import org.example.clothing.ItemOfClothing;
-import org.example.order.Observer;
-import org.example.order.Subject;
 
 import java.util.ArrayList;
 import java.util.List;

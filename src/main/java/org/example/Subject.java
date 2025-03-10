@@ -1,4 +1,4 @@
-package org.example.order;
+package org.example;
 
 public interface Subject {
     void addObserver(Observer Observer);

@@ -20,9 +20,6 @@ public class SkirtMenu {
                 .colour(ColourMenu.chooseColour(scanner))
                 .build();
 
-        System.out.println("----------------------------------------------------------------------------------------");
-        System.out.println("Build method complete");
-
         SkirtMenu.chooseWaistline(scanner, skirt, clothesModifier);
         SkirtMenu.choosePattern(scanner, skirt, clothesModifier);
 

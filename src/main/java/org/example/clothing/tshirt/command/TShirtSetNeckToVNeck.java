@@ -12,7 +12,7 @@ public class TShirtSetNeckToVNeck implements ClothesCommand {
 
     @Override
     public void execute() {
-        tshirt.setVNeck(false);
+        tshirt.setVNeck(true);
         System.out.println("----------------------------------------------------------------------------------------");
         System.out.println("NECK V-NECK");
     }
