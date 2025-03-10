@@ -15,8 +15,6 @@ public class TShirt extends ItemOfClothing {
     private boolean isLongSleeve;
     private boolean isVNeck;
 
-    public TShirt() {}
-
     public TShirt(TShirtBuilder tShirtBuilder) {
         this.id = tShirtBuilder.id;
         this.name = tShirtBuilder.name;
@@ -32,24 +30,12 @@ public class TShirt extends ItemOfClothing {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getPrice() {
         return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
     }
 
     public Size getSize() {
@@ -76,16 +62,8 @@ public class TShirt extends ItemOfClothing {
         this.colour = colour;
     }
 
-    public boolean isLongSleeve() {
-        return isLongSleeve;
-    }
-
     public void setLongSleeve(boolean longSleeve) {
         isLongSleeve = longSleeve;
-    }
-
-    public boolean isVNeck() {
-        return isVNeck;
     }
 
     public void setVNeck(boolean VNeck) {

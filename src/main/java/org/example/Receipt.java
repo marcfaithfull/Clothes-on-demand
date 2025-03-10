@@ -31,6 +31,6 @@ public class Receipt {
             totalPrice += itemOfClothing.getPrice();
         }
         System.out.println("------------------------");
-        System.out.println("Total paid: " + totalPrice);
+        System.out.println("Total: " + totalPrice);
     }
 }

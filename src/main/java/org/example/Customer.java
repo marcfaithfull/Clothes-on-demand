@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Customer implements Subject {
-    private int id;
+    private final int id;
     private String name;
     private String address;
     private String mail;
