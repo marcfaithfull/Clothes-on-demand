@@ -6,9 +6,9 @@ import org.example.material.Material;
 import org.example.size.Size;
 
 public class TShirt extends ItemOfClothing {
-    private int id;
-    private String name;
-    private int price;
+    private final int id;
+    private final String name;
+    private final int price;
     private Size size;
     private Material material;
     private Colour colour;
@@ -88,8 +88,8 @@ public class TShirt extends ItemOfClothing {
         private Size size;
         private Material material;
         private Colour colour;
-        private boolean isLongSleeve;
-        private boolean isVNeck;
+        private final boolean isLongSleeve = false;
+        private final boolean isVNeck = false;
 
         public TShirtBuilder size(Size size) {
             this.size = size;

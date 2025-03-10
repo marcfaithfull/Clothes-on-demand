@@ -8,7 +8,7 @@ public class MainMenu {
 
     public static void loadWelcomeMenu() {
         System.out.println("Welcome to CLOTHES ON DEMAND!");
-        System.out.print("All we need is your first name to continue: ");
+        System.out.print("All we need is your first name to get started: ");
     }
 
     public static void loadProductMenu(Customer customer) {

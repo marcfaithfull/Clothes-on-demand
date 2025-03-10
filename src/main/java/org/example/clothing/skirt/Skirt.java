@@ -88,8 +88,8 @@ public class Skirt extends ItemOfClothing {
         private Size size;
         private Material material;
         private Colour colour;
-        private boolean isHighWaistline;
-        private boolean isFlowery;
+        private final boolean isHighWaistline = false;
+        private final boolean isFlowery = false;
 
         public SkirtBuilder size(Size size) {
             this.size = size;

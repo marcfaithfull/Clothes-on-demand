@@ -88,8 +88,8 @@ public class Pants extends ItemOfClothing {
         private Size size;
         private Material material;
         private Colour colour;
-        private boolean areWide;
-        private boolean areShorts;
+        private final boolean areWide = false;
+        private final boolean areShorts = false;
 
         public PantsBuilder size(Size size) {
             this.size = size;
