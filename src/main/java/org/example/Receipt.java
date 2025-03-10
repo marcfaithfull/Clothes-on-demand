@@ -21,7 +21,7 @@ public class Receipt {
         System.out.println("Customer Receipt");
         System.out.println("Receipt id #" + id);
         System.out.println("Receipt code: " + name);
-        System.out.println("Customer name: " + customer.getName());
+        System.out.println("Customer: " + customer.getName() + " (#" + customer.getId() + ")");
         System.out.println("Address: " + customer.getAddress());
         System.out.println("Email: " + customer.getMail());
         for (ItemOfClothing itemOfClothing : orderItems) {

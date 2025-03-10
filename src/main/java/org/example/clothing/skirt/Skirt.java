@@ -15,8 +15,6 @@ public class Skirt extends ItemOfClothing {
     private boolean isHighWaistline;
     private boolean isFlowery;
 
-    public Skirt() {}
-
     public Skirt(SkirtBuilder skirtBuilder) {
         this.id = skirtBuilder.id;
         this.name = skirtBuilder.name;
@@ -32,24 +30,12 @@ public class Skirt extends ItemOfClothing {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getPrice() {
         return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
     }
 
     public Size getSize() {
@@ -76,16 +62,8 @@ public class Skirt extends ItemOfClothing {
         this.colour = colour;
     }
 
-    public boolean isHighWaistline() {
-        return isHighWaistline;
-    }
-
     public void setHighWaistline(boolean highWaistline) {
         isHighWaistline = highWaistline;
-    }
-
-    public boolean isFlowery() {
-        return isFlowery;
     }
 
     public void setFlowery(boolean flowery) {

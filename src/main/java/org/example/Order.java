@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Order implements Subject {
-    private int id;
-    private String name;
+    private final int id;
+    private final String name;
     private static final AtomicInteger nextId = new AtomicInteger(1000);
     private final List<Observer> observers = new ArrayList<>();
     private final List<ItemOfClothing> itemsOrdered;

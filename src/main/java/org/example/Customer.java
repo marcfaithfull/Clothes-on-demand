@@ -12,7 +12,7 @@ public class Customer implements Subject {
     private String address;
     private String mail;
 
-    private static final AtomicInteger nextId = new AtomicInteger();
+    private static final AtomicInteger nextId = new AtomicInteger(100);
     List<ItemOfClothing> basket = new ArrayList<>();
     List<Observer> observers = new ArrayList<>();
 
@@ -22,6 +22,10 @@ public class Customer implements Subject {
 
     public List<ItemOfClothing> getBasket() {
         return basket;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {
