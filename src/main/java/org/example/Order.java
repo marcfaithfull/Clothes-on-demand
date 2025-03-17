@@ -46,7 +46,7 @@ public class Order implements Subject {
     }
 
     public void orderComplete() {
-        notifyObservers("Order number #" + getId() + " complete");
+        notifyObservers("Order #" + getId() + " complete");
     }
 
     public List<ItemOfClothing> getItemsOrdered() {

@@ -27,24 +27,31 @@ public class App {
             switch (userInput) {
                 case 1:
                     PantsMenu.buildPants(customer, scanner, clothesModifier);
+                    if (MainMenu.finaliseOrder(customer, scanner)) {
+                        programIsActive = false;
+                    }
                     break;
                 case 2:
                     TShirtMenu.buildTShirt(customer, scanner, clothesModifier);
+                    if (MainMenu.finaliseOrder(customer, scanner)) {
+                        programIsActive = false;
+                    }
                     break;
                 case 3:
                     SkirtMenu.buildSkirt(customer, scanner, clothesModifier);
+                    if (MainMenu.finaliseOrder(customer, scanner)) {
+                        programIsActive = false;
+                    }
                     break;
                 default:
                     MainMenu.loadErrorMessage();
-            }
-            if (MainMenu.finaliseOrder(customer, scanner)) {
-                Order order = new Order(customer);
-                order.addObserver(CEO.getCEO());
-                Receipt receipt = new Receipt(order);
-                receipt.printReceipt(customer);
-                order.orderComplete();
-                programIsActive = false;
+                    break;
             }
         }
+        Order order = new Order(customer);
+        order.addObserver(CEO.getCEO());
+        Receipt receipt = new Receipt(order);
+        receipt.printReceipt(customer);
+        order.orderComplete();
     }
 }
