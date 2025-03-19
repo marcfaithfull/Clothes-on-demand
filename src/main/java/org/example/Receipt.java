@@ -17,11 +17,11 @@ public class Receipt {
 
     public void printReceipt(Customer customer) {
         int totalPrice = 0;
-        System.out.println("-----------------------------------------------------");
+        System.out.println("----------------------------------------------------------------------------------------");
         System.out.println("Customer Receipt");
-        System.out.println("Receipt id #" + id);
-        System.out.println("Receipt code: " + name);
-        System.out.println("Customer: " + customer.getName() + " (#" + customer.getId() + ")");
+        System.out.println("Receipt id: #" + id);
+        System.out.println("Receipt name: " + name);
+        System.out.println("Customer name & id: " + customer.getName() + " (#" + customer.getId() + ")");
         System.out.println("Address: " + customer.getAddress());
         System.out.println("Email: " + customer.getMail());
         for (ItemOfClothing itemOfClothing : orderItems) {
@@ -30,7 +30,7 @@ public class Receipt {
             System.out.println(itemOfClothing);
             totalPrice += itemOfClothing.getPrice();
         }
-        System.out.println("------------------------");
-        System.out.println("Total: " + totalPrice);
+        System.out.println("-----------------------------------");
+        System.out.println("Total: " + totalPrice + "kr");
     }
 }
