@@ -1,51 +1,16 @@
 package org.example.clothing.skirt;
 
 import org.example.clothing.ItemOfClothing;
-import org.example.colour.Colour;
-import org.example.material.Material;
-import org.example.size.Size;
 
 public class Skirt extends ItemOfClothing {
-    private Size size;
-    private Material material;
-    private Colour colour;
+    private final int id = 130;
+    private final String name = "Skirt";
+    private final int price = 400;
     private boolean isHighWaistline;
     private boolean isFlowery;
 
-    public int getId() {
-        return 130;
-    }
-
-    public String getName() {
-        return "Skirt";
-    }
-
     public int getPrice() {
-        return 400;
-    }
-
-    public Size getSize() {
-        return size;
-    }
-
-    public void setSize(Size size) {
-        this.size = size;
-    }
-
-    public Material getMaterial() {
-        return material;
-    }
-
-    public void setMaterial(Material material) {
-        this.material = material;
-    }
-
-    public Colour getColour() {
-        return colour;
-    }
-
-    public void setColour(Colour colour) {
-        this.colour = colour;
+        return price;
     }
 
     public void setHighWaistline(boolean highWaistline) {
@@ -58,11 +23,11 @@ public class Skirt extends ItemOfClothing {
 
     @Override
     public String toString() {
-        return  getName() + " (#" + getId() + ")" +
-                "\nPrice: " + getPrice() + "kr" +
-                "\nSize: " + size +
-                "\nMaterial: " + material +
-                "\nColour: " + colour +
+        return  name + " (#" + id + ")" +
+                "\nPrice: " + price + "kr" +
+                "\nSize: " + getSize() +
+                "\nMaterial: " + getMaterial() +
+                "\nColour: " + getColour() +
                 "\nHigh waistline: " + isHighWaistline +
                 "\nFlowery: " + isFlowery;
     }

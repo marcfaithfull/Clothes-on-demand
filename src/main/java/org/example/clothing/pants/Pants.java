@@ -1,51 +1,16 @@
 package org.example.clothing.pants;
 
 import org.example.clothing.ItemOfClothing;
-import org.example.colour.Colour;
-import org.example.material.Material;
-import org.example.size.Size;
 
 public class Pants extends ItemOfClothing {
-    private Size size;
-    private Material material;
-    private Colour colour;
+    private final int id = 65;
+    private final String name = "Pants";
+    private final int price = 500;
     private boolean areWide;
     private boolean areShorts;
 
-    public int getId() {
-        return 65;
-    }
-
-    public String getName() {
-        return "Pants";
-    }
-
     public int getPrice() {
-        return 500;
-    }
-
-    public Size getSize() {
-        return size;
-    }
-
-    public void setSize(Size size) {
-        this.size = size;
-    }
-
-    public Material getMaterial() {
-        return material;
-    }
-
-    public void setMaterial(Material material) {
-        this.material = material;
-    }
-
-    public Colour getColour() {
-        return colour;
-    }
-
-    public void setColour(Colour colour) {
-        this.colour = colour;
+        return price;
     }
 
     public void setAreWide(boolean areWide) {
@@ -58,11 +23,11 @@ public class Pants extends ItemOfClothing {
 
     @Override
     public String toString() {
-        return  getName() + " (#" + getId() + ")" +
-                "\nPrice: " + getPrice() + "kr" +
-                "\nSize: " + size +
-                "\nMaterial: " + material +
-                "\nColour: " + colour +
+        return  name + " (#" + id + ")" +
+                "\nPrice: " + price + "kr" +
+                "\nSize: " + getSize() +
+                "\nMaterial: " + getMaterial() +
+                "\nColour: " + getColour() +
                 "\nWide fit: " + areWide +
                 "\nShorts: " + areShorts;
     }
