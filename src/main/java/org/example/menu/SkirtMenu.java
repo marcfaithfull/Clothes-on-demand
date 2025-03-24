@@ -14,7 +14,8 @@ import java.util.Scanner;
 public class SkirtMenu {
 
     public static void buildSkirt(Customer customer, Scanner scanner, ClothesModifier clothesModifier) {
-        Skirt skirt = new Skirt.SkirtBuilder()
+        SkirtBuilder skirtBuilder = new SkirtBuilder();
+        Skirt skirt = skirtBuilder
                 .size(SizeMenu.chooseSize(scanner))
                 .material(MaterialMenu.chooseMaterial(scanner))
                 .colour(ColourMenu.chooseColour(scanner))

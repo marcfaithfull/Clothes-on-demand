@@ -14,7 +14,8 @@ import java.util.Scanner;
 public class PantsMenu {
 
     public static void buildPants(Customer customer, Scanner scanner, ClothesModifier clothesModifier) {
-        Pants pants = new Pants.PantsBuilder()
+        PantsBuilder pantsBuilder = new PantsBuilder();
+        Pants pants = pantsBuilder
                 .size(SizeMenu.chooseSize(scanner))
                 .material(MaterialMenu.chooseMaterial(scanner))
                 .colour(ColourMenu.chooseColour(scanner))

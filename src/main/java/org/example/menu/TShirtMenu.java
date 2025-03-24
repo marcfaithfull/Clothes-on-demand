@@ -3,6 +3,7 @@ package org.example.menu;
 import org.example.Customer;
 import org.example.clothing.ClothesModifier;
 import org.example.clothing.tshirt.TShirt;
+import org.example.clothing.tshirt.TShirtBuilder;
 import org.example.clothing.tshirt.command.TShirtSetNeckToRegular;
 import org.example.clothing.tshirt.command.TShirtSetNeckToVNeck;
 import org.example.clothing.tshirt.command.TShirtSetSleevesToLong;
@@ -14,7 +15,8 @@ import java.util.Scanner;
 public class TShirtMenu {
 
     public static void buildTShirt(Customer customer, Scanner scanner, ClothesModifier clothesModifier) {
-        TShirt tShirt = new TShirt.TShirtBuilder()
+        TShirtBuilder tshirtBuilder = new TShirtBuilder();
+        TShirt tShirt = tshirtBuilder
                 .size(SizeMenu.chooseSize(scanner))
                 .material(MaterialMenu.chooseMaterial(scanner))
                 .colour(ColourMenu.chooseColour(scanner))

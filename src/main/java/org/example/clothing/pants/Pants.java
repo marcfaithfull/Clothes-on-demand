@@ -6,36 +6,22 @@ import org.example.material.Material;
 import org.example.size.Size;
 
 public class Pants extends ItemOfClothing {
-    private final int id;
-    private final String name;
-    private final int price;
     private Size size;
     private Material material;
     private Colour colour;
     private boolean areWide;
     private boolean areShorts;
 
-    public Pants(PantsBuilder pantsBuilder) {
-        this.id = pantsBuilder.id;
-        this.name = pantsBuilder.name;
-        this.price = pantsBuilder.price;
-        this.size = pantsBuilder.size;
-        this.material = pantsBuilder.material;
-        this.colour = pantsBuilder.colour;
-        this.areWide = pantsBuilder.areWide;
-        this.areShorts = pantsBuilder.areShorts;
-    }
-
     public int getId() {
-        return id;
+        return 65;
     }
 
     public String getName() {
-        return name;
+        return "Pants";
     }
 
     public int getPrice() {
-        return price;
+        return 500;
     }
 
     public Size getSize() {
@@ -79,35 +65,5 @@ public class Pants extends ItemOfClothing {
                 "\nColour: " + colour +
                 "\nWide fit: " + areWide +
                 "\nShorts: " + areShorts;
-    }
-
-    public static class PantsBuilder {
-        private final int id = 65;
-        private final String name = "Pants";
-        private final int price = 500;
-        private Size size;
-        private Material material;
-        private Colour colour;
-        private final boolean areWide = false;
-        private final boolean areShorts = false;
-
-        public PantsBuilder size(Size size) {
-            this.size = size;
-            return this;
-        }
-
-        public PantsBuilder material(Material material) {
-            this.material = material;
-            return this;
-        }
-
-        public PantsBuilder colour(Colour colour) {
-            this.colour = colour;
-            return this;
-        }
-
-        public Pants build() {
-            return new Pants(this);
-        }
     }
 }

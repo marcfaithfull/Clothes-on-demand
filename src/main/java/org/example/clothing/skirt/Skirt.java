@@ -6,36 +6,22 @@ import org.example.material.Material;
 import org.example.size.Size;
 
 public class Skirt extends ItemOfClothing {
-    private final int id;
-    private final String name;
-    private final int price;
     private Size size;
     private Material material;
     private Colour colour;
     private boolean isHighWaistline;
     private boolean isFlowery;
 
-    public Skirt(SkirtBuilder skirtBuilder) {
-        this.id = skirtBuilder.id;
-        this.name = skirtBuilder.name;
-        this.price = skirtBuilder.price;
-        this.size = skirtBuilder.size;
-        this.material = skirtBuilder.material;
-        this.colour = skirtBuilder.colour;
-        this.isHighWaistline = skirtBuilder.isHighWaistline;
-        this.isFlowery = skirtBuilder.isFlowery;
-    }
-
     public int getId() {
-        return id;
+        return 130;
     }
 
     public String getName() {
-        return name;
+        return "Skirt";
     }
 
     public int getPrice() {
-        return price;
+        return 400;
     }
 
     public Size getSize() {
@@ -79,35 +65,5 @@ public class Skirt extends ItemOfClothing {
                 "\nColour: " + colour +
                 "\nHigh waistline: " + isHighWaistline +
                 "\nFlowery: " + isFlowery;
-    }
-
-    public static class SkirtBuilder {
-        private final int id = 130;
-        private final String name = "Skirt";
-        private final int price = 400;
-        private Size size;
-        private Material material;
-        private Colour colour;
-        private final boolean isHighWaistline = false;
-        private final boolean isFlowery = false;
-
-        public SkirtBuilder size(Size size) {
-            this.size = size;
-            return this;
-        }
-
-        public SkirtBuilder material(Material material) {
-            this.material = material;
-            return this;
-        }
-
-        public SkirtBuilder colour(Colour colour) {
-            this.colour = colour;
-            return this;
-        }
-
-        public Skirt build() {
-            return new Skirt(this);
-        }
     }
 }

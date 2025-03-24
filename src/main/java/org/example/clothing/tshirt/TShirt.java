@@ -6,36 +6,22 @@ import org.example.material.Material;
 import org.example.size.Size;
 
 public class TShirt extends ItemOfClothing {
-    private final int id;
-    private final String name;
-    private final int price;
     private Size size;
     private Material material;
     private Colour colour;
     private boolean isLongSleeve;
     private boolean isVNeck;
 
-    public TShirt(TShirtBuilder tShirtBuilder) {
-        this.id = tShirtBuilder.id;
-        this.name = tShirtBuilder.name;
-        this.price = tShirtBuilder.price;
-        this.size = tShirtBuilder.size;
-        this.material = tShirtBuilder.material;
-        this.colour = tShirtBuilder.colour;
-        this.isLongSleeve = tShirtBuilder.isLongSleeve;
-        this.isVNeck = tShirtBuilder.isVNeck;
-    }
-
     public int getId() {
-        return id;
+        return 195;
     }
 
     public String getName() {
-        return name;
+        return "TShirt";
     }
 
     public int getPrice() {
-        return price;
+        return 300;
     }
 
     public Size getSize() {
@@ -79,35 +65,5 @@ public class TShirt extends ItemOfClothing {
                 "\nColour: " + colour +
                 "\nLong Sleeve: " + isLongSleeve +
                 "\nV-Neck: " + isVNeck;
-    }
-
-    public static class TShirtBuilder {
-        private final int id = 195;
-        private final String name = "TShirt";
-        private final int price = 300;
-        private Size size;
-        private Material material;
-        private Colour colour;
-        private final boolean isLongSleeve = false;
-        private final boolean isVNeck = false;
-
-        public TShirtBuilder size(Size size) {
-            this.size = size;
-            return this;
-        }
-
-        public TShirtBuilder material(Material material) {
-            this.material = material;
-            return this;
-        }
-
-        public TShirtBuilder colour(Colour colour) {
-            this.colour = colour;
-            return this;
-        }
-
-        public TShirt build() {
-            return new TShirt(this);
-        }
     }
 }
