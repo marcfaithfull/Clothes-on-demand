@@ -33,7 +33,7 @@ public class PantsBuilder implements Subject {
     }
 
     public Pants build() {
-        notifyObservers("A pair of pants is being manufactured");
+        notifyObservers("A pair of pants are being manufactured");
         return pants;
     }
 

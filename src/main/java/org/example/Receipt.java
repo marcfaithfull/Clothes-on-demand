@@ -30,7 +30,7 @@ public class Receipt {
             System.out.println(itemOfClothing);
             totalPrice += itemOfClothing.getPrice();
         }
-        System.out.println("-----------------------------------");
+        System.out.println();
         System.out.println("Total: " + totalPrice + "kr");
     }
 }
