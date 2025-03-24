@@ -3,8 +3,6 @@ package org.example.clothing.pants;
 import org.example.clothing.ItemOfClothing;
 
 public class Pants extends ItemOfClothing {
-    private final int id = 65;
-    private final String name = "Pants";
     private final int price = 500;
     private boolean areWide;
     private boolean areShorts;
@@ -23,6 +21,8 @@ public class Pants extends ItemOfClothing {
 
     @Override
     public String toString() {
+        int id = 65;
+        String name = "Pants";
         return  name + " (#" + id + ")" +
                 "\nPrice: " + price + "kr" +
                 "\nSize: " + getSize() +
