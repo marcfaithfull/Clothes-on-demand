@@ -71,6 +71,6 @@ public class Customer implements Subject {
 
     public void addItemToBasket(ItemOfClothing itemOfClothing) {
         basket.add(itemOfClothing);
-        notifyObservers("An item of clothing is being manufactured");
+        notifyObservers("The item of clothing is ready");
     }
 }

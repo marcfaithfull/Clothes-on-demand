@@ -28,6 +28,10 @@ public class Order implements Subject {
         return name;
     }
 
+    public List<ItemOfClothing> getItemsOrdered() {
+        return itemsOrdered;
+    }
+
     @Override
     public void addObserver(Observer basketObserver) {
         observers.add(basketObserver);
@@ -47,9 +51,5 @@ public class Order implements Subject {
 
     public void orderComplete() {
         notifyObservers("Order #" + getId() + " complete");
-    }
-
-    public List<ItemOfClothing> getItemsOrdered() {
-        return itemsOrdered;
     }
 }

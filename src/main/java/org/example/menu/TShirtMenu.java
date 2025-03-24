@@ -1,5 +1,6 @@
 package org.example.menu;
 
+import org.example.CEO;
 import org.example.Customer;
 import org.example.clothing.ClothesModifier;
 import org.example.clothing.tshirt.TShirt;
@@ -16,6 +17,7 @@ public class TShirtMenu {
 
     public static void buildTShirt(Customer customer, Scanner scanner, ClothesModifier clothesModifier) {
         TShirtBuilder tshirtBuilder = new TShirtBuilder();
+        tshirtBuilder.addObserver(CEO.getCEO());
         TShirt tShirt = tshirtBuilder
                 .size(SizeMenu.chooseSize(scanner))
                 .material(MaterialMenu.chooseMaterial(scanner))

@@ -1,5 +1,6 @@
 package org.example.menu;
 
+import org.example.CEO;
 import org.example.Customer;
 import org.example.clothing.ClothesModifier;
 import org.example.clothing.skirt.*;
@@ -15,6 +16,7 @@ public class SkirtMenu {
 
     public static void buildSkirt(Customer customer, Scanner scanner, ClothesModifier clothesModifier) {
         SkirtBuilder skirtBuilder = new SkirtBuilder();
+        skirtBuilder.addObserver(CEO.getCEO());
         Skirt skirt = skirtBuilder
                 .size(SizeMenu.chooseSize(scanner))
                 .material(MaterialMenu.chooseMaterial(scanner))
