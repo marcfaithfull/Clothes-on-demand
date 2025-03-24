@@ -14,6 +14,6 @@ public class TShirtSetSleevesToShort implements ClothesCommand {
     public void execute() {
         tshirt.setLongSleeve(false);
         System.out.println("----------------------------------------------------------------------------------------");
-        System.out.println("SLEEVES SHORT");
+        System.out.println("SLEEVES: SHORT");
     }
 }

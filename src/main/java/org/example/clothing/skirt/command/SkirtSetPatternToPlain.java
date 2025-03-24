@@ -13,7 +13,6 @@ public class SkirtSetPatternToPlain implements ClothesCommand {
     @Override
     public void execute() {
         skirt.setFlowery(false);
-        System.out.println("----------------------------------------------------------------------------------------");
-        System.out.println("PATTERN PLAIN");
+        System.out.println("PATTERN: PLAIN");
     }
 }

@@ -41,13 +41,11 @@ public class TShirtMenu {
                 switch (SleeveChoice) {
                     case 1:
                         TShirtSetSleevesToShort tShirtSetSleevesToShort = new TShirtSetSleevesToShort(tShirt);
-                        clothesModifier.setClothesModification(tShirtSetSleevesToShort);
-                        clothesModifier.confirm();
+                        clothesModifier.addClothesModification(tShirtSetSleevesToShort);
                         return;
                     case 2:
                         TShirtSetSleevesToLong tShirtSetSleevesToLong = new TShirtSetSleevesToLong(tShirt);
-                        clothesModifier.setClothesModification(tShirtSetSleevesToLong);
-                        clothesModifier.confirm();
+                        clothesModifier.addClothesModification(tShirtSetSleevesToLong);
                         return;
                     default:
                         System.out.println("----------------------------------------------------------------------------------------");
@@ -74,12 +72,12 @@ public class TShirtMenu {
                 switch (NeckChoice) {
                     case 1:
                         TShirtSetNeckToRegular tShirtSetNeckToRegular = new TShirtSetNeckToRegular(tShirt);
-                        clothesModifier.setClothesModification(tShirtSetNeckToRegular);
+                        clothesModifier.addClothesModification(tShirtSetNeckToRegular);
                         clothesModifier.confirm();
                         return;
                     case 2:
                         TShirtSetNeckToVNeck tShirtSetNeckToVNeck = new TShirtSetNeckToVNeck(tShirt);
-                        clothesModifier.setClothesModification(tShirtSetNeckToVNeck);
+                        clothesModifier.addClothesModification(tShirtSetNeckToVNeck);
                         clothesModifier.confirm();
                         return;
                     default:

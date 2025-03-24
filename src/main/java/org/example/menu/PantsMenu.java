@@ -40,13 +40,11 @@ public class PantsMenu {
                 switch (fitChoice) {
                     case 1:
                         PantsSetFitToRegular pantsSetFitToRegular = new PantsSetFitToRegular(pants);
-                        clothesModifier.setClothesModification(pantsSetFitToRegular);
-                        clothesModifier.confirm();
+                        clothesModifier.addClothesModification(pantsSetFitToRegular);
                         return;
                     case 2:
                         PantsSetFitToWide pantsSetFitToWide = new PantsSetFitToWide(pants);
-                        clothesModifier.setClothesModification(pantsSetFitToWide);
-                        clothesModifier.confirm();
+                        clothesModifier.addClothesModification(pantsSetFitToWide);
                         return;
                     default:
                         System.out.println("----------------------------------------------------------------------------------------");
@@ -73,12 +71,12 @@ public class PantsMenu {
                 switch (lengthChoice) {
                     case 1:
                         PantsSetLengthToRegular pantsSetLengthToRegular = new PantsSetLengthToRegular(pants);
-                        clothesModifier.setClothesModification(pantsSetLengthToRegular);
+                        clothesModifier.addClothesModification(pantsSetLengthToRegular);
                         clothesModifier.confirm();
                         return;
                     case 2:
                         PantsSetLengthToShorts pantsSetLengthToShorts = new PantsSetLengthToShorts(pants);
-                        clothesModifier.setClothesModification(pantsSetLengthToShorts);
+                        clothesModifier.addClothesModification(pantsSetLengthToShorts);
                         clothesModifier.confirm();
                         return;
                     default:

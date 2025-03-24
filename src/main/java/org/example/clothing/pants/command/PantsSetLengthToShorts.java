@@ -13,7 +13,6 @@ public class PantsSetLengthToShorts implements ClothesCommand {
     @Override
     public void execute() {
         pants.setAreShorts(true);
-        System.out.println("----------------------------------------------------------------------------------------");
-        System.out.println("LENGTH SHORTS");
+        System.out.println("LENGTH: SHORTS");
     }
 }

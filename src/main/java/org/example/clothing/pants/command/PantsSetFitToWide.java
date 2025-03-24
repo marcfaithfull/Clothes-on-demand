@@ -14,6 +14,6 @@ public class PantsSetFitToWide implements ClothesCommand {
     public void execute() {
         pants.setAreWide(true);
         System.out.println("----------------------------------------------------------------------------------------");
-        System.out.println("FIT WIDE");
+        System.out.println("FIT: WIDE");
     }
 }

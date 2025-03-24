@@ -1,13 +1,19 @@
 package org.example.clothing;
 
-public class ClothesModifier {
-    private ClothesCommand clothesCommand;
+import java.util.ArrayList;
+import java.util.List;
 
-    public void setClothesModification(ClothesCommand clothesCommand) {
-        this.clothesCommand = clothesCommand;
+public class ClothesModifier {
+    private final List<ClothesCommand> clothesCommands = new ArrayList<>();
+
+    public void addClothesModification(ClothesCommand clothesCommand) {
+        clothesCommands.add(clothesCommand);
     }
 
     public void confirm() {
-        clothesCommand.execute();
+        for (ClothesCommand clothesCommand : clothesCommands) {
+            clothesCommand.execute();
+        }
+        clothesCommands.clear();
     }
 }

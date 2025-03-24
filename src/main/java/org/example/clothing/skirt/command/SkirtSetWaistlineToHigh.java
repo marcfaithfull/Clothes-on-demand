@@ -14,6 +14,6 @@ public class SkirtSetWaistlineToHigh implements ClothesCommand {
     public void execute() {
         skirt.setHighWaistline(true);
         System.out.println("----------------------------------------------------------------------------------------");
-        System.out.println("WAISTLINE HIGH");
+        System.out.println("WAISTLINE: HIGH");
     }
 }

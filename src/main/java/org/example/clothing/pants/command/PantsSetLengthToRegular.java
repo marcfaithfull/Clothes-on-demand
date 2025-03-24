@@ -13,7 +13,6 @@ public class PantsSetLengthToRegular implements ClothesCommand {
     @Override
     public void execute() {
         pants.setAreShorts(false);
-        System.out.println("----------------------------------------------------------------------------------------");
-        System.out.println("LENGTH REGULAR");
+        System.out.println("LENGTH: REGULAR");
     }
 }

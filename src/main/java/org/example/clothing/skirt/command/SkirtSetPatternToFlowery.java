@@ -13,7 +13,6 @@ public class SkirtSetPatternToFlowery implements ClothesCommand {
     @Override
     public void execute() {
         skirt.setFlowery(true);
-        System.out.println("----------------------------------------------------------------------------------------");
-        System.out.println("PATTERN FLOWERY");
+        System.out.println("PATTERN: FLOWERY");
     }
 }

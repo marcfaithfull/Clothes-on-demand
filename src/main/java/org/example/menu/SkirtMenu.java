@@ -40,13 +40,11 @@ public class SkirtMenu {
                 switch (waistlineChoice) {
                     case 1:
                         SkirtSetWaistlineToRegular skirtSetWaistlineToRegular = new SkirtSetWaistlineToRegular(skirt);
-                        clothesModifier.setClothesModification(skirtSetWaistlineToRegular);
-                        clothesModifier.confirm();
+                        clothesModifier.addClothesModification(skirtSetWaistlineToRegular);
                         return;
                     case 2:
                         SkirtSetWaistlineToHigh skirtSetWaistlineToHigh = new SkirtSetWaistlineToHigh(skirt);
-                        clothesModifier.setClothesModification(skirtSetWaistlineToHigh);
-                        clothesModifier.confirm();
+                        clothesModifier.addClothesModification(skirtSetWaistlineToHigh);
                         return;
                     default:
                         System.out.println("----------------------------------------------------------------------------------------");
@@ -73,12 +71,12 @@ public class SkirtMenu {
                 switch (PatternChoice) {
                     case 1:
                         SkirtSetPatternToPlain skirtSetPatternToPlain = new SkirtSetPatternToPlain(skirt);
-                        clothesModifier.setClothesModification(skirtSetPatternToPlain);
+                        clothesModifier.addClothesModification(skirtSetPatternToPlain);
                         clothesModifier.confirm();
                         return;
                     case 2:
                         SkirtSetPatternToFlowery skirtSetPatternToFlowery = new SkirtSetPatternToFlowery(skirt);
-                        clothesModifier.setClothesModification(skirtSetPatternToFlowery);
+                        clothesModifier.addClothesModification(skirtSetPatternToFlowery);
                         clothesModifier.confirm();
                         return;
                     default:

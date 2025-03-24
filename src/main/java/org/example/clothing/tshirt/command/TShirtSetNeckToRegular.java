@@ -13,7 +13,6 @@ private final TShirt tshirt;
     @Override
     public void execute() {
         tshirt.setVNeck(false);
-        System.out.println("----------------------------------------------------------------------------------------");
-        System.out.println("NECK REGULAR");
+        System.out.println("NECK: REGULAR");
     }
 }

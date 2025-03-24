@@ -14,6 +14,6 @@ public class PantsSetFitToRegular implements ClothesCommand {
     public void execute() {
         pants.setAreWide(false);
         System.out.println("----------------------------------------------------------------------------------------");
-        System.out.println("FIT REGULAR");
+        System.out.println("FIT: REGULAR");
     }
 }
