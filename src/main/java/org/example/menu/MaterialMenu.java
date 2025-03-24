@@ -32,7 +32,7 @@ public class MaterialMenu {
                         System.out.println("----------------------------------------------------------------------------------------");
                         System.out.println("Invalid input");
                 }
-            } catch (InputMismatchException getItRightSon) {
+            } catch (InputMismatchException inputMismatchException) {
                 System.out.println("----------------------------------------------------------------------------------------");
                 System.out.println("Invalid input");
                 scanner.nextLine();
