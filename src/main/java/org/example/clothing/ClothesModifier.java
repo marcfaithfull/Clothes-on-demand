@@ -10,7 +10,7 @@ public class ClothesModifier {
         clothesCommands.add(clothesCommand);
     }
 
-    public void confirm() {
+    public void confirmModification() {
         for (ClothesCommand clothesCommand : clothesCommands) {
             clothesCommand.execute();
         }

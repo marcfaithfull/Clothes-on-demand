@@ -74,12 +74,12 @@ public class SkirtMenu {
                     case 1:
                         SkirtSetPatternToPlain skirtSetPatternToPlain = new SkirtSetPatternToPlain(skirt);
                         clothesModifier.addClothesModification(skirtSetPatternToPlain);
-                        clothesModifier.confirm();
+                        clothesModifier.confirmModification();
                         return;
                     case 2:
                         SkirtSetPatternToFlowery skirtSetPatternToFlowery = new SkirtSetPatternToFlowery(skirt);
                         clothesModifier.addClothesModification(skirtSetPatternToFlowery);
-                        clothesModifier.confirm();
+                        clothesModifier.confirmModification();
                         return;
                     default:
                         System.out.println("----------------------------------------------------------------------------------------");

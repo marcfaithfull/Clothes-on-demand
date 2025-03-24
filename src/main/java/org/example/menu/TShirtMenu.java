@@ -75,12 +75,12 @@ public class TShirtMenu {
                     case 1:
                         TShirtSetNeckToRegular tShirtSetNeckToRegular = new TShirtSetNeckToRegular(tShirt);
                         clothesModifier.addClothesModification(tShirtSetNeckToRegular);
-                        clothesModifier.confirm();
+                        clothesModifier.confirmModification();
                         return;
                     case 2:
                         TShirtSetNeckToVNeck tShirtSetNeckToVNeck = new TShirtSetNeckToVNeck(tShirt);
                         clothesModifier.addClothesModification(tShirtSetNeckToVNeck);
-                        clothesModifier.confirm();
+                        clothesModifier.confirmModification();
                         return;
                     default:
                         System.out.println("----------------------------------------------------------------------------------------");

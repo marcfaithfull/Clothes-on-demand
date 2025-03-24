@@ -74,12 +74,12 @@ public class PantsMenu {
                     case 1:
                         PantsSetLengthToRegular pantsSetLengthToRegular = new PantsSetLengthToRegular(pants);
                         clothesModifier.addClothesModification(pantsSetLengthToRegular);
-                        clothesModifier.confirm();
+                        clothesModifier.confirmModification();
                         return;
                     case 2:
                         PantsSetLengthToShorts pantsSetLengthToShorts = new PantsSetLengthToShorts(pants);
                         clothesModifier.addClothesModification(pantsSetLengthToShorts);
-                        clothesModifier.confirm();
+                        clothesModifier.confirmModification();
                         return;
                     default:
                         System.out.println("----------------------------------------------------------------------------------------");
